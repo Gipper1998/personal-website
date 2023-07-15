@@ -8,7 +8,7 @@ const quotes = [
 
 function openSideMenu()
 {
-    document.getElementById("mySidebar").style.width = "200px";
+    document.getElementById("mySidebar").style.width = "300px";
 }
 
 function closeSideMenu()
