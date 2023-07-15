@@ -227,4 +227,9 @@ html
         padding-right: 20px;
         padding-bottom: 60px;  
     }
+
+    .icon-image
+    {
+        width: 35px;
+    }
 }

@@ -111,7 +111,7 @@
     .exp-view
     {
         overflow: scroll;
-        height: 350px;
+        height: 400px;
     }
 
     .exp-image
@@ -120,4 +120,22 @@
         height: 300px;
         transition: 0.2s;
     } 
+
+    .exp-text h2
+    {
+        font-size: 32px;
+    }
+
+    .exp-text p
+    {
+        font-size: 20px;
+        padding: 5px;
+    }
+    
+    .exp-text ul
+    {
+        margin-left: 10px;
+        padding: 10px;
+        font-size: 20px;
+    }
 }
