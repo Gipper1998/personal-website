@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel = "stylesheet" href = "styles/text.css">
+        <link rel = "preconnect" href = "https://fonts.googleapis.com">
+        <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
+        <link href = "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel = "stylesheet">
+        <link rel = "stylesheet" type = "text/css" href = "styles/general.css">
+        <link rel = "stylesheet" type = "text/css" href = "styles/exp.css">
+        <link rel = "stylesheet" type = "text/css" href = "styles/about.css">
+        <link rel = "stylesheet" type = "text/css" href = "styles/sidebar.css">
+        <link rel = "stylesheet" type = "text/css" href = "styles/projects.css">
+        <script src="scripts/script.js"></script>
+        <!---Favicon and Title--->
+        <link rel="icon" type="image/x-icon" href="icons/pixel tree.png">
+        <title>Hi, I'm Trent Halama!</title>
+    </head>
+    <body onload = "firstLoad()" onscroll = "checkTop()">
+        <!--Header section-->
+        <div id = "topHeader" class = "header">
+            <div class = "right-section">
+                <a class = "menu-button" onclick = "scrollHome()">Home</a>
+                <a class = "menu-button" href = "#about">About_Me</a>
+                <a class = "menu-button" href = "#project">Projects</a>
+                <a class = "menu-button" href = "#exp">Experience</a>
+                <a class = "menu-button" href = "#contact">Contact</a>
+                <input type = "image" class = "sidebar-button" src="images/Hamburger_icon.png" onclick = "openSideMenu()">
+            </div>
+
+            <div id = "mySidebar" class = "sidebar-menu">
+                <a href = "javascript:void(0)" class = "closeButton" onclick = "closeSideMenu()">x</a>
+                <a onclick = "scrollHome()">Home</a>
+                <a href = "#about" onclick = "closeSideMenu()">About_Me</a>
+                <a href = "#project" onclick = "closeSideMenu()">Projects</a>
+                <a href = "#exp" onclick = "closeSideMenu()">Experience</a>
+                <a href = "#contact" onclick = "closeSideMenu()">Contact</a>
+            </div>
+        </div>
+
+        <!---Top of page-->
+        <div class = top-page-image>
+            <img class = "header-image" src="images/Trent.png">
+        </div>
+
+        <!--About me Section-->
+        <div id = "about" class = "about-me">
+            <div class = "about-container-header">
+                <h1>
+                    About_Me
+                </h1>
+            </div>
+            <div class = "about-container-under-line">
+                <hr class = "about-container-line">
+            </div>
+            <div class = "about-container" style = "padding-bottom: 30px;">
+                <div class = "about-image-section">
+                    <img class = "profile-picture" src="images/halama-trent-22-02-15-6356(2).png">
+                </div>
+                <div class="about-text-section">
+                    <p>
+                        Hello, my name is Trent Halama and I am currently in 
+                        my senior year at Florida Polytechnic University seeking
+                        a Bachelors Degree in Computer Engineering. Originally grew
+                        up in the Florida Keys and previously attended Florida Institute
+                        of Technology and College of the Florida Keys.
+                    </p>
+                    <p style="padding-top: 20px;">
+                        Throughout my journey outside academics, I have been on lots of adventures outside academics
+                        like being a Resident Assistant, and currently an Orientation Leader and serving on
+                        the Florida Polycon board as Vice-President of Vendors.
+                    </p>
+                    <p style="padding-top: 20px;">
+                        In my studies I have done projects ranging with communicating with Arduino
+                        using registers, autonomous robotic vechicles, and a wide range of coding
+                        projects. I am continuing to learn every day and I continue to make progress
+                        on achieving all my goals and making new ones every single day.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!--Project Section-->
+        <div id = "project" class = "project-container">
+            <div class = "columns content">
+                <div class="content-container">
+                    <h1>Projects</h1>
+                    <div class = "project-container-under-line">
+                        <hr class = "project-container-line">
+                    </div>
+                    <p class = "robot-text">
+                        There have been a lot of projects I've been apart of
+                        for academics as well as personal use to help on future projects.
+                        What I have featured on the right is one of my most recent projects worked
+                        in with a group to build a robot that can navigate a terrain and decide
+                        which path to take. This project had the following materials needed to replicate
+                        it:
+                    </p>
+                    <ul>               
+                        <li>1 x Ultrasonic sensor</li>
+                        <li>1 x Parallax Robotics Kit (includes 2 Servo Motors)</li>
+                        <li>1 x Arduino Uno Rev 3</li>
+                        <li>1 x Raspberry Pi model 3B</li>
+                        <li>1 x Pi Camera</li>
+                    </ul>
+                    <p class = "robot-text">
+                        For more information about this project as well
+                        as the coding for it, click the "Robotics project" for more information. 
+                        For all of my projects, click on the "Github" button to view more projects
+                        created by me and if you have any questions, please contact me and I'll be happy to answer them.
+                    </p>
+                    <div class = "robot-button">
+                        <a class = "button-icon-project" href = "https://github.com/Gipper1998/EEL4660C-Robotics-Project">Robotic Project</a>
+                        <a class = "button-icon-github" href = "https://github.com/Gipper1998">Github <img class = "github-project-icon" src="icons/project-github-icon.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class = "columns image" style = "background-image:url('images/robot.jpeg')"></div>
+        </div>
+        
+        <!--Experience Section-->
+        <!--Normal Section-->
+        <div id = "exp" class = "exp-container-header">
+            <h1>
+                Experience
+            </h1>
+        </div>
+        <div class = "exp-container-under-line">
+            <hr class = "exp-container-line">
+        </div>
+        <div class = "exp-grid">
+            <div class = "exp-view">
+                <div class = "exp-image-view">
+                    <a href = "https://flpolycon.org/"><img class = "exp-image" src = "images/polycon-photo.jpg"></a>
+                </div>
+
+                <div class = "exp-text">
+                    <h2>
+                        Florida Polycon
+                    </h2>
+                    <p>
+                        Florida Polycon is a student-run organization under the guidance of Florida Polytechnic University's Student Government Association that runs an annual convention-style event that brings in over 2000 visitors to the University.
+                        I started in 2022 as the Vendor-Events Coordinator, communicating with all vendors such as Fireworks, Food Trucks, and so much more.
+                        Now I serve as the Vice President of Vendors for 2023, which directs all vendors in the exhibitor space to conclude my senior year at the University.
+                    </p>
+                </div>
+            </div>
+
+            <div class = "exp-view">
+                <div class = "exp-image-view">
+                    <a href = "https://support.nettally.com/"><img class = "exp-image" src = "images/intern-photo.jpg"></a>
+                </div>
+
+                <div class = "exp-text">
+                    <h2>
+                        Intern at Nettally
+                    </h2>
+                    <p>
+                        To gain real-world knowledge and experience, I interned for Nettally (Network Tallahassee), a small company located in Tallahassee that helps provide internet, email, and phone service to their community in 2023.
+                         While learning some network terminology, I helped develop a website for the company (www.nettally.com) and helped with customer relations.
+                    </p>
+                </div>
+            </div>
+
+            <div class = "exp-view">
+                <div class = "exp-image-view">
+                    <a href = "https://floridapoly.edu/student-affairs/incoming-phoenixes/index.php">
+                        <img class = "exp-image" src = "images/orientation-image.jpg">
+                    </a>
+                </div>
+
+                <div class = "exp-text">
+                    <h2>
+                        Orientation Leader
+                    </h2>
+                    <p>
+                        In the Fall of 2023, I became an Orientation Leader for the University under the New Student and Family Program at Florida Polytechnic University. 
+                        During this process, I helped the newly incoming class of 2027 transition from the High School to the University lifestyle by letting them know the resources available if they need any assistance. 
+                        In addition, answering any questions they have as well as touch base with them throughout their first semester at the University.
+                    </p>
+                </div>
+            </div>
+
+            <div class = "exp-view">
+                <div class = "exp-image-view">
+                    <a href = "https://www.fit.edu/reslife/staff/"><img class = "exp-image" src = "images/reslife-photo.JPG"></a>
+                </div>
+
+                <div class = "exp-text">
+                    <h2>
+                        Resident Assistant
+                    </h2>
+                    <p>
+                        At the Florida Insitute of Technology for the Fall of 2021 and Spring of 2022, I became a Resident Assistant (RA) of Roberts Hall, a dorm that only allows first-year students. 
+                        I served as a role model throughout the dorms answering any questions, maintaining policies, and running small events to bring awareness of various topics such as diversity and campus resources. 
+                        I also was a part of helping transition the first years from High School to the University lifestyle.
+                    </p>
+                </div>
+            </div>
+
+            <div class = "exp-view">
+                <div class = "exp-image-view">
+                    <a href = "#exp"><img class = "exp-image" src = "images/fireworks.jpg"></a>
+                </div>
+
+                <div class = "exp-text">
+                    <h2>
+                        Accomplishments
+                    </h2>
+                    <p>
+                        Many accolades were awarded to me inside and outside of academics. 
+                        I will always be grateful for achievements from any department, but it's not the end of my goals. 
+                        It only pushes me to continue moving forward and accomplish much more than anyone else in any industry. 
+                        The following accolades I received are listed as follows:
+                    </p>
+                    <ul style = "padding-left: 20px;">
+                        <li>Silent Performer of the Year - Florida Tech Residential Life</li>
+                        <li>Provost List - Florida Polytechnic University</li>
+                        <li>Presidents List - College of the Florida Keys</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class = "exp-view">
+                <div class = "exp-image-view">
+                    <a href = "http://www.grimalgrove.com/"><img class = "exp-image" src = "images/grove-photo.jpg"></a>
+                </div>
+
+                <div class = "exp-text">
+                    <h2>
+                        Grimal Grove
+                    </h2>
+                    <p>
+                        Back in 2016, during High School, I helped a small organization called Grimal Grove, a small farm and botanical garden preserving exotic trees for research, education, and the arts. 
+                        It was a chance to volunteer, give back to my local community, and help preserve this iconic landscape in the Florida Keys. 
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!--Conclusion/Footer/Contact-->
+        <div id = "contact" class = "footer">
+            <div class = "icon-layout">
+                <a href = "https://github.com/Gipper1998" title = "Github"><img class = "icon-image" src="icons/github-icon.png"></a>
+                <a href = "https://www.linkedin.com/in/trent-halama/" title = "Linkedin"><img class = "icon-image" src="icons/linkedin-icon.png"></a>
+                <a href = "mailto: thalama@floridapoly.edu" title = "Email"><img class = "icon-image" src="icons/email-icon.png"></a>
+            </div>
+            <div class = "icon-layout-documents">
+                <a href = "files/Trent-Resume.pdf" title = "Resume"><img class = "icon-image" src="icons/resume-icon.png"></a>
+                <a href = "files/Trent-Resume.pdf" title = "Cover Letter"><img class = "icon-image" src="icons/cover-letter-icon.png"></a>
+            </div>
+            <div class = "footer-text">
+                <p class = "footer-name">
+                    Trent Edward Halama
+                </p>
+                <p class = "footer-degree">
+                    B.S. Computer Engineering | Florida Polytechnic University
+                </p>
+                <p class = "footer-phone-number">
+                    <a class = "phone-number" href="tel:+12398504016">(239) 850-4016</a>
+               </p>
+            </div>
+            <div class = "footer-text-grid">
+                <div class = "random-quote">
+                    <p id = "quote" class = "quote-text">
+                    </p>
+                </div>
+                <div class = "made-by">
+                    <p class = "made-by-text">
+                        Website hosted by Raid Shadow Legends.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

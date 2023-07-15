@@ -1,0 +1,75 @@
+.about-me
+{
+    background-color: lightgray;
+    padding-bottom: 50px;
+}
+
+.about-container-header
+{
+    padding-top: 50px;
+}
+
+.about-container-header h1
+{
+    text-align: center;
+    font-size: 40px;
+}
+
+.about-container-under-line
+{
+    padding: 5px;
+    margin: 0;
+    background-color: lightgray;
+}
+
+.about-container-line
+{
+    padding: 0;
+    display: flex;
+    width: 50px;
+    margin: auto;
+}
+
+.about-container
+{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 0.5fr 0.5fr;
+}
+
+.about-text-section 
+{
+    font-size: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+}
+
+.about-image-section
+{
+    text-align: center;
+}
+
+.profile-picture
+{
+    width: 400px;
+    height: auto;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 800px) 
+{
+    .about-container
+    {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: 1fr;
+        padding-top: 20px;
+    }
+    .about-image-section
+    {
+        padding-bottom: 40px;
+    }
+}
