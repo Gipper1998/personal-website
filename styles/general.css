@@ -191,7 +191,7 @@ html
     font-size: 16px;
 }
 
-@media screen and (min-width: 800px)
+@media screen and (min-width: 500px)
 {
     .header-image
     {
@@ -200,12 +200,11 @@ html
     }
 }
 
-@media screen and (max-width: 800px) 
+@media screen and (max-width: 500px) 
 {
 
     .header-image
     {
-        width: 100%;
         object-fit: cover;
         object-position: 50% 50%;
         transition: height 0.2s
