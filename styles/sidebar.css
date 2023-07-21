@@ -26,7 +26,7 @@
 .sidebar-button
 {
     background: transparent;
-    height: 60px;
+    height: 40px;
     padding: 15px;
     transition: background-color 0.15s;
 }
@@ -67,14 +67,14 @@
     position: absolute;
     top: -4.5px;
     right: -12px;
-    font-size: 36px;
+    font-size: 40px;
 }
 
 .sidebar-menu a:hover {
     color: #f1f1f1;
 }
 
-@media screen and (min-width: 1000px)
+@media screen and (min-width: 500px)
 {
     .sidebar-button
     {
@@ -91,7 +91,7 @@
     }
 }
 
-@media screen and (max-width: 1000px)
+@media screen and (max-width: 500px)
  {
     .menu-button
     {

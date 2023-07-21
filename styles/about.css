@@ -58,7 +58,7 @@
     border-radius: 50%;
 }
 
-@media screen and (max-width: 1000px) 
+@media screen and (max-width: 500px) 
 {
     .about-container
     {
@@ -71,5 +71,12 @@
     .about-image-section
     {
         padding-bottom: 40px;
+    }
+    
+    .profile-picture
+    {
+        width: 300px;
+        height: auto;
+        border-radius: 50%;
     }
 }
