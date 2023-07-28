@@ -192,16 +192,16 @@ html
     font-size: 16px;
 }
 
-@media screen and (min-width: 500px)
+@media screen and (min-width: 800px)
 {
     .header-image
     {
-        height: 1000px;
+        height: 1200px;
         transition: height 0.2s;
     }
 }
 
-@media screen and (max-width: 500px) 
+@media screen and (max-width: 800px) 
 {
 
     .header-image

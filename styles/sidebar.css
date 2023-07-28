@@ -74,7 +74,7 @@
     color: #f1f1f1;
 }
 
-@media screen and (min-width: 500px)
+@media screen and (min-width: 800px)
 {
     .sidebar-button
     {
@@ -91,7 +91,7 @@
     }
 }
 
-@media screen and (max-width: 500px)
+@media screen and (max-width: 800px)
  {
     .menu-button
     {

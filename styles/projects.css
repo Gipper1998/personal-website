@@ -116,7 +116,6 @@
 }
 
 
-
 .github-project-icon
 {
     margin-bottom: -5px;
@@ -124,7 +123,7 @@
     height: auto;
 }
 
-@media screen and (max-width: 500px) 
+@media screen and (max-width: 800px) 
 {
     .project-container
     {
@@ -154,27 +153,5 @@
     .project-container .columns.content .content-container h5
     {
         margin-bottom: 5px;
-    }
-
-    .robot-button
-    {
-        font-size: 20px;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .button-icon-github, .button-icon-project, .button-icon-github::after, .button-icon-project::after,
-    .button-icon-github:visited, .button-icon-project:visited
-    {
-        font-size: 20px;
-        margin-left: 15px;
-        margin-right: 15px;
-        margin-bottom: 15px;
-        border-style: none;
-        border-radius: 20px;   
-        transition: 0.2s;
-        font-weight: 500;
-        text-decoration: none;
     }
 }

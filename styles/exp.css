@@ -25,21 +25,15 @@
     margin: auto;
 }
 
-.exp-container
-{
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    grid-template-columns: 0.5fr 0.5fr;
-}
-
 .exp-grid
 {
     display: grid;
     padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
     background-color: lightgray;
     grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 20px;
+    column-gap: 40px;
     row-gap: 40px;
 }
 
@@ -97,9 +91,7 @@
     padding: 10px;
 }
 
-
-
-@media screen and (max-width: 1000px) 
+@media screen and (max-width: 800px) 
 {
     .exp-grid
     {
