@@ -3,7 +3,7 @@ body
 {
     padding: 0;
     margin: 0;
-    background-image: url("images/pixel-waterfall.jpg");
+    background-image: url("/personal-website/images/pixel-waterfall.jpg");
     background-size:cover;
     background-repeat: no-repeat;
     font-family: Roboto, Arial;
