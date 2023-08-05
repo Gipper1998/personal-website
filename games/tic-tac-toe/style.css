@@ -6,7 +6,7 @@
 .container
 {
     padding-top: 35px;
-    background-image: url("/personal-website/images/pixel-town.jpg");
+    background-image: url("images/pixel-town.jpg");
 }
 
 .game-container
