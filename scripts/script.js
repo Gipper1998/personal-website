@@ -4,7 +4,7 @@ const quotes = [
     "\"I continue to strive for excellence everyday, because I continue to push through any challenge that comes my way.\" - Trent Halama",
     "\"Only those who dare to fail greatly can ever achieve greatly.\" — Robert F. Kennedy",
     "\"Whatever you decide to do, make sure it makes you happy.\" — Paulo Coelho"  
-]
+];
 
 function openSideMenu()
 {

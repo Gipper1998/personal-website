@@ -42,6 +42,7 @@
     border-style: solid;
     overflow: scroll;
     height: 400px;
+    background-color: rgb(167, 167, 167);
 }
 
 .exp-image-view

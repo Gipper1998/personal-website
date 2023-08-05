@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel = "stylesheet" href = "games/snake/style.css">
+        <link rel = "stylesheet" href = "styles/general.css">
+        <link rel = "preconnect" href = "https://fonts.googleapis.com">
+        <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
+        <link href = "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel = "stylesheet">
+        <script src = "games/snake/script.js"></script>
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <link rel="icon" type="image/x-icon" href="icons/pixel tree.png">
+        <title>Snake</title>
+    </head>
+    <body>
+        <div id = "wrapper"><p class = "art-made">Wallpaper provided by Wallpaper Flare</p></div>
+        <div class = "container">
+            <div class = "status">
+                <p class = "high-score">High Score:
+                    <span id = "high-score-num"></span>
+                </p>
+                <p class = "status-bar"> Status:
+                    <span id = "status-bar-type"></span>
+                </p>
+                <p class = "score">Current Score:
+                    <span id = "current-score-num"></span>
+                </p>
+            </div>
+            <div class = "game-border">
+                <canvas id = "board">
+            </div>
+            </canvas>
+            <div class = "button-row">
+                <a href = "/personal-website/index.html"><button class = "site-button">Home</button></a>
+                <button id = "reset" class = "site-button">Reset</button>
+            </div>
+        </div>
+
+         <!--Conclusion/Footer/Contact-->
+         <div id = "contact" class = "footer">
+            <div class = "icon-layout">
+                <a href = "https://github.com/Gipper1998" title = "Github"><img class = "icon-image" src="icons/github-icon.png"></a>
+                <a href = "https://www.linkedin.com/in/trent-halama/" title = "Linkedin"><img class = "icon-image" src="icons/linkedin-icon.png"></a>
+                <a href = "mailto: thalama@floridapoly.edu" title = "Email"><img class = "icon-image" src="icons/email-icon.png"></a>
+            </div>
+            <div class = "icon-layout-documents">
+                <a href = "files/Resume-Trent.pdf" title = "Resume"><img class = "icon-image" src="icons/resume-icon.png"></a>
+                <a href = "files/Cover_Letter-Trent.pdf" title = "Cover Letter"><img class = "icon-image" src="icons/cover-letter-icon.png"></a>
+            </div>
+            <div class = "footer-text">
+                <p class = "footer-name">
+                    Trent Edward Halama
+                </p>
+                <p class = "footer-degree">
+                    B.S. Computer Engineering | Florida Polytechnic University
+                </p>
+                <p class = "footer-phone-number">
+                    <a class = "phone-number" href="tel:+12398504016">(239) 850-4016</a>
+               </p>
+            </div>
+            <div class = "footer-text-grid">
+                <div class = "random-quote">
+                    <p id = "quote" class = "quote-text">
+                    </p>
+                </div>
+                <div class = "made-by">
+                    <p class = "made-by-text">
+                        Website domain by namecheap. Made with html, css, and javascript.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

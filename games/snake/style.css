@@ -1,0 +1,118 @@
+
+body
+{
+    padding: 0;
+    margin: 0;
+    background-image: url("/personal-website/images/pixel-waterfall.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    font-family: Roboto, Arial;
+    text-align: center;
+    color: white;
+}
+
+.game-border
+{
+    display: inline-flex;
+    justify-content: center;
+    border-style: solid;
+    border-color: aqua;
+    touch-action: none;
+}
+
+.container
+{
+    opacity: 0.8;
+}
+
+.status
+{
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    border-style: solid;
+    width: 200px;
+    background-color: rgba(0, 255, 255, 0.875);
+    margin: auto;
+    margin-bottom: 10px;
+    font-weight: 700;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    color: rgb(255, 149, 0);
+    border-color: aquamarine;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+.test
+{
+    color:rgba(0, 255, 255, 0.875);
+}
+
+#time
+{
+    color: green;
+}
+
+#matches
+{
+    color: blue;
+} 
+
+#matches-left
+{
+    color: yellowgreen;
+}
+
+.button-row
+{
+    padding: 35px;
+}
+
+.site-button
+{
+    font-size: 16px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: 0.2s;
+    border-radius: 5px;
+    border-style: none;
+    background-color: rgba(216, 112, 147, 0.818);
+    color: white;
+    font-weight: bold;
+}
+
+.site-button:hover
+{
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.site-button:active
+{
+    background-color: lightsalmon;
+}
+
+.art-made
+{
+    display: inline-flex;
+    flex-wrap: wrap;
+    border-style: solid;
+    border-color:rgba(183, 255, 231, 0.9);
+    background-color: rgb(204, 75, 75, 0.5);
+    font-weight: 700;
+    padding: 8px;
+    border-radius: 15px;
+    color:rgb(255, 255, 0);
+}
+
+
+#wrapper
+{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}

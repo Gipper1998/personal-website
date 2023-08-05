@@ -1,0 +1,160 @@
+*
+{
+    font-family: Roboto, Arial;
+}
+
+.container
+{
+    padding-top: 35px;
+    background-image: url("/personal-website/images/pixel-town.jpg");
+}
+
+.game-container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding-top: 35px;
+}
+
+#turn-check
+{
+    font-size: 24px;
+    padding: 5px;
+    margin-left: 40px;
+    margin-right: 40px;
+    transition: 0.2s;
+    border-radius: 5px;
+    border-style: none;
+    background-color: rgba(255, 255, 255, 0.818);
+    color: rgb(15, 77, 221);
+    font-weight: bold;
+}
+
+.board
+{
+    border-collapse: collapse;
+}
+
+td
+{
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    vertical-align: middle;
+    border-width: 4px;
+    border-style: solid;
+    border-color: black;
+}
+
+.b0, .b1, .b2
+{
+    border-top-style: none;
+}
+
+.b0, .b3, .b6
+{
+    border-left-style: none;
+}
+
+.b6, .b7, .b8
+{
+    border-bottom-style: none;
+}
+
+.b2, .b5, .b8
+{
+    border-right-style: none;
+}
+
+.x 
+{
+    transition: 0.2s;
+    color: blue;
+    font-size: 90px;
+}
+  
+.o 
+{ 
+    transition: 0.2s;
+    color: red;
+    font-size: 90px;
+}
+  
+.shimmer
+{
+    -webkit-mask:linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/300% 100%;
+    background-repeat: no-repeat;
+    animation: shimmer 2.5s infinite;
+}
+
+@keyframes shimmer 
+{
+    100% {-webkit-mask-position:left}
+}
+
+.button-row
+{
+    padding: 35px;
+}
+
+.site-button
+{
+    font-size: 16px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: 0.2s;
+    border-radius: 5px;
+    border-style: none;
+    background-color: rgba(216, 112, 147, 0.818);
+    color: white;
+    font-weight: bold;
+}
+
+#turn-check
+{
+    font-size: 24px;
+    padding: 5px;
+    margin-left: 40px;
+    margin-right: 40px;
+    transition: 0.2s;
+    border-radius: 5px;
+    border-style: none;
+    background-color: rgba(255, 255, 255, 0.818);
+    color: rgb(15, 77, 221);
+    font-weight: bold;
+}
+
+.site-button:hover
+{
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.site-button:active
+{
+    background-color: lightsalmon;
+}
+
+.art-made
+{
+    display: inline-flex;
+    border-style: solid;
+    border-color:rgb(183, 255, 231);
+    background-color: white;
+    opacity: 0.5;
+    font-weight: 700;
+    padding: 8px;
+    border-radius: 15px;
+    color:rgb(3, 136, 136);
+}
+
+#wrapper
+{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
