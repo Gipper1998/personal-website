@@ -99,7 +99,6 @@ function reset()
 
 function update()
 {
-    console.log(interval);
     if (velocityX > 0 || velocityY > 0)
     {
         timer = true;
