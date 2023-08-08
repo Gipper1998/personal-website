@@ -6,34 +6,37 @@
         <link rel = "preconnect" href = "https://fonts.googleapis.com">
         <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
         <link href = "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel = "stylesheet">
-        <script src = "games/snake/script.js"></script>
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
         <link rel="icon" type="image/x-icon" href="icons/pixel tree.png">
         <title>Snake</title>
     </head>
     <body>
-        <div id = "wrapper"><p class = "art-made">Wallpaper provided by Wallpaper Flare</p></div>
-        <div class = "container">
-            <div class = "status">
-                <p class = "high-score">High Score:
-                    <span id = "high-score-num"></span>
-                </p>
-                <p class = "status-bar"> Status:
-                    <span id = "status-bar-type"></span>
-                </p>
-                <p class = "score">Current Score:
-                    <span id = "current-score-num"></span>
-                </p>
-            </div>
-            <div class = "game-border">
-                <canvas id = "board">
-            </div>
-            </canvas>
-            <div class = "button-row">
-                <a href = "/personal-website/index.html"><button class = "site-button">Home</button></a>
-                <button id = "reset" class = "site-button">Reset</button>
+        <div class = "bg">
+            <div id = "wrapper"><p class = "art-made">Wallpaper provided by Wallpaper Flare</p></div>
+            <div class = "container">
+                <div class = "status">
+                    <p class = "high-score">High Score:
+                        <span id = "high-score-num"></span>
+                    </p>
+                    <p class = "status-bar"> Status:
+                        <span id = "status-bar-type"></span>
+                    </p>
+                    <p class = "score">Current Score:
+                        <span id = "current-score-num"></span>
+                    </p>
+                </div>
+                <div class = "game-border">
+                    <canvas id = "board">
+                </div>
+                </canvas>
+                <div class = "button-row">
+                    <a href = "/personal-website/index.html"><button class = "site-button">Home</button></a>
+                    <button id = "reset" class = "site-button">Reset</button>
+                </div>
             </div>
         </div>
+
+        <script src = "games/snake/script.js"></script>
 
          <!--Conclusion/Footer/Contact-->
          <div id = "contact" class = "footer">

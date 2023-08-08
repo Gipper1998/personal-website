@@ -1,20 +1,14 @@
-
-body
+.bg
 {
-    padding: 0;
-    margin: 0;
     background-image: url("/personal-website/images/pixel-waterfall.jpg");
-    background-size:cover;
-    background-repeat: no-repeat;
-    font-family: Roboto, Arial;
-    text-align: center;
-    color: white;
+    background-size: 100% 100%;
 }
 
 .game-border
 {
     display: inline-flex;
     justify-content: center;
+    text-align: center;
     border-style: solid;
     border-color: aqua;
     touch-action: none;
@@ -23,6 +17,7 @@ body
 .container
 {
     opacity: 0.8;
+    text-align: center;
 }
 
 .status
@@ -48,21 +43,6 @@ body
 .test
 {
     color:rgba(0, 255, 255, 0.875);
-}
-
-#time
-{
-    color: green;
-}
-
-#matches
-{
-    color: blue;
-} 
-
-#matches-left
-{
-    color: yellowgreen;
 }
 
 .button-row

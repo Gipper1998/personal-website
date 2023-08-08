@@ -4,11 +4,10 @@
   padding: 0;
 }
 
-body
+.bg
 {
     background-image: url("/personal-website/images/pixel-train.jpg");
-    background-size:cover;
-    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 .button-row
@@ -73,6 +72,8 @@ body
 {
     flex-wrap: wrap;
     border-style: solid;
+    text-align: center;
+    justify-content: center;
     border-color:rgba(183, 255, 231, 0.9);
     background-color: rgb(204, 75, 75, 0.5);
     font-weight: 700;
