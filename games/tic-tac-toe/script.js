@@ -89,6 +89,7 @@ function update()
         }
         gameEnd = false;
         playerTurn = pieces[getRndInteger(0, 1)];
+        updateTurn();
     });    
 }
 
