@@ -41,9 +41,9 @@ window.onload = function()
 
 function update()
 {
-    updateTurn();
     for (let i = 0; i < 9; i++) 
     {
+        updateTurn();
         const doc = document.getElementById(i.toString());
         doc.addEventListener("click", function()
         {
