@@ -41,6 +41,7 @@ window.onload = function()
 
 function update()
 {
+    updateTurn();
     for (let i = 0; i < 9; i++) 
     {
         const doc = document.getElementById(i.toString());
@@ -71,7 +72,6 @@ function update()
                 {
                     playerTurn = "F";
                 }
-                updateTurn();
             }
         });
     }
