@@ -24,6 +24,7 @@ let matched = 0, totalMatches = 8;
 let cardOne, cardTwo;
 let disableDeck = false;
 let firstFlip = false;
+let gameStart = false;
 let count = 0;
 let second = 0;
 
@@ -54,11 +55,12 @@ function updateMatches()
     let totalMatchDor = document.getElementById("matches-left");
     matchDoc.innerHTML = matched;
     totalMatchDor.innerHTML = (totalMatches - matched);
+    
 }
 
 function startTimer()
 {
-    if (firstFlip)
+    if (firstFlip && gameStart)
     {
         count+= 10;
         if (count == 1000)
@@ -78,6 +80,7 @@ function flipCard({target: clickedCard})
     if (!firstFlip)
     {
         firstFlip = true;
+        gameStart = true;
         startTimer();
     }
     // Double check card flip
@@ -119,6 +122,10 @@ function matchCards(img1, img2)
         }, 500);
 
         matched++;
+        if (matched == totalMatches)
+        {
+            gameStart = false;
+        }
         updateMatches();
 
         // Once the events are removed, the deck can be reopened and the two cards will be reset.
@@ -151,7 +158,7 @@ function shuffleCards()
     });
     //Resets values
     matched = 0;
-    disableDeck = false;
+    disableDeck = false, gameStart = false;
     cardOne = cardTwo = "";
 
     //Image array

@@ -30,12 +30,14 @@ let winPositions =
 ];
 
 let pieces = ["X", "O"];
-let playerTurn = pieces[getRndInteger(0, 1)];
+let playerTurn;
 let gameEnd = false;
 
 window.onload = function()
 {
     randomQuote();
+    playerTurn = pieces[getRndInteger(0, 1)];
+    updateTurn();
     update();
 }
 
@@ -43,10 +45,10 @@ function update()
 {
     for (let i = 0; i < 9; i++) 
     {
-        updateTurn();
         const doc = document.getElementById(i.toString());
         doc.addEventListener("click", function()
         {
+            updateTurn();
             if (this.innerHTML === "" && !gameEnd)
             {
                 // Find the place where clicked and place with class
@@ -73,6 +75,7 @@ function update()
                     playerTurn = "F";
                 }
             }
+            updateTurn();
         });
     }
 
