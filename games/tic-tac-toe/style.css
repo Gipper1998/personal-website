@@ -158,3 +158,17 @@ td
     justify-content: center;
     text-align: center;
 }
+
+@media screen and (max-width: 700px)
+{
+    td
+    {
+        width: 100px;
+        height: 100px;
+    }
+
+    .x, .o
+    {
+        font-size: 80px;
+    }
+}
