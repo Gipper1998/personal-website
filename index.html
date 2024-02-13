@@ -1,338 +1,268 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-PFCV54QCPT"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-PFCV54QCPT');
-        </script>
-        <link rel = "preconnect" href = "https://fonts.googleapis.com">
-        <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
-        <link href = "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel = "stylesheet">
-        <link rel = "stylesheet" type = "text/css" href = "styles/general.css">
-        <link rel = "stylesheet" type = "text/css" href = "styles/exp.css">
-        <link rel = "stylesheet" type = "text/css" href = "styles/about.css">
-        <link rel = "stylesheet" type = "text/css" href = "styles/sidebar.css">
-        <link rel = "stylesheet" type = "text/css" href = "styles/projects.css">
-        <link rel = "stylesheet" type = "text/css" href = "styles/game.css">
-        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
-        <!---Favicon and Title--->
-        <link rel="icon" type="image/x-icon" href="icons/pixel tree.png">
-        <title>Hi, I'm Trent Halama!</title>
-    </head>
-    <body onload = "firstLoad()" onscroll = "checkTop()">
-        <!--Header section-->
-        <div id = "topHeader" class = "header">
-            <div class = "right-section">
-                <a class = "menu-button" onclick = "scrollHome()">Home</a>
-                <a class = "menu-button" href = "#about">About_Me</a>
-                <a class = "menu-button" href = "#project">Projects</a>
-                <a class = "menu-button" href = "#exp">Experience</a>
-                <a class = "menu-button" href = "#games">Games</a>
-                <a class = "menu-button" href = "#contact">Contact</a>
-                <input type = "image" class = "sidebar-button" src="images/Hamburger_icon.png" onclick = "openSideMenu()">
-            </div>
 
-            <div id = "mySidebar" class = "sidebar-menu">
-                <a href = "javascript:void(0)" class = "closeButton" onclick = "closeSideMenu()">x</a>
-                <a onclick = "scrollHome()">Home</a>
-                <a href = "#about" onclick = "closeSideMenu()">About_Me</a>
-                <a href = "#project" onclick = "closeSideMenu()">Projects</a>
-                <a href = "#exp" onclick = "closeSideMenu()">Experience</a>
-                <a href = "#games" onclick = "closeSideMenu()">Games</a>
-                <a href = "#contact" onclick = "closeSideMenu()">Contact</a>
-            </div>
+<head>
+    <!--Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>    
+    <link rel="stylesheet" href="styles/c_bootstrap.css">
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!--External Style Sheets-->
+    <link rel="stylesheet" type="text/css" href="styles/general.css">
+    <link rel="stylesheet" type="text/css" href="styles/exp.css">
+    <link rel="stylesheet" type="text/css" href="styles/about.css">
+    <link rel="stylesheet" type="text/css" href="styles/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="styles/game.css">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+
+    <!---Favicon and Title--->
+    <link rel="icon" type="image/x-icon" href="icons/pixel tree.png">
+    <title>Hi, I'm Trent Halama!</title>
+</head>
+
+<body onload="firstLoad()" onscroll="checkTop()">
+
+    <!--Header section-->
+    <div id="topHeader" class="header">
+        <div class="right-section">
+            <a class="menu-button" onclick="scrollHome()">Home</a>
+            <a class="menu-button" href="#about">About_Me</a>
+            <a class="menu-button" href="#exp">Experience</a>
+            <a class="menu-button" href="#games">Games</a>
+            <a class="menu-button" href="#contact">Contact</a>
+            <input type="image" class="sidebar-button" src="images/Hamburger_icon.png" onclick="openSideMenu()">
         </div>
 
-        <!---Top of page-->
-        <div class = top-page-image>
-            <img class = "header-image" src="images/Trent.png">
+        <!--Top Sidebar-->
+        <div id="mySidebar" class="sidebar-menu">
+            <a href="javascript:void(0)" class="closeButton" onclick="closeSideMenu()">x</a>
+            <a onclick="scrollHome()">Home</a>
+            <a href="#about" onclick="closeSideMenu()">About_Me</a>
+            <a href="#exp" onclick="closeSideMenu()">Experience</a>
+            <a href="#games" onclick="closeSideMenu()">Games</a>
+            <a href="#contact" onclick="closeSideMenu()">Contact</a>
         </div>
+    </div>
+
+    <!---Top of page-->
+    <div class=top-page-image></div>
+
+    <!--Background for website image to display-->
+    <div class="background">
 
         <!--About me Section-->
-        <div id = "about" class = "about-me">
-            <div class = "about-container-header">
-                <h1>
-                    About_Me
-                </h1>
-            </div>
-            <div class = "about-container-under-line">
-                <hr class = "about-container-line">
-            </div>
-            <div class = "about-container" style = "padding-bottom: 30px;">
-                <div class = "about-image-section">
-                    <img class = "profile-picture" src="images/halama-trent-22-02-15-6356(2).png">
+        <div id="about" class="about-me">
+
+            <div class="about-me-back">
+                <div class="about-container-header">
+                    <h1>
+                        About_Me
+                    </h1>
                 </div>
-                <div class="about-text-section">
-                    <p>
-                        Hello, my name is Trent Halama and I am currently in 
-                        my senior year at Florida Polytechnic University seeking
-                        a Bachelors Degree in Computer Engineering. Originally grew
-                        up in the Florida Keys and previously attended Florida Institute
-                        of Technology and College of the Florida Keys.
-                    </p>
-                    <p style="padding-top: 20px;">
-                        Throughout my journey outside academics, I have been on lots of adventures outside academics
-                        like being a Resident Assistant, and currently an Orientation Leader and serving on
-                        the Florida Polycon board as Vice-President of Vendors.
-                    </p>
-                    <p style="padding-top: 20px;">
-                        In my studies I have done projects ranging with communicating with Arduino
-                        using registers, autonomous robotic vechicles, and a wide range of coding
-                        projects. I am continuing to learn every day and I continue to make progress
-                        on achieving all my goals and making new ones every single day.
-                    </p>
+                <div class="about-container-under-line">
+                    <hr class="about-container-line">
+                </div>
+                <div class="about-container" style="padding-bottom: 30px;">
+                    <div class="about-image-section">
+                        <img class="profile-picture" src="images/halama-trent-22-02-15-6356(2).png">
+                    </div>
+                    <div class="about-text-section">
+                        <p>
+                            Thank you for visiting my website. I'm Trent, a senior at Florida Polytechnic Engineering
+                            student studying Computer Engineering.
+                            Previously, I transferred from the Florida Institute of Technology as a Resident Assistant
+                            and graduated from the College of the Florida Keys with an Associate of Arts degree.
+                            I have obtained many goals thus far and am continuously pursuing new ones that are bigger,
+                            bolder, and more impractical.
+                            While studying Computer Engineering, I developed a background in back-end and front-end
+                            coding, with additional robotics-related projects, and I developed a rover that can move
+                            autonomously with the support of the Florida Space Institute Capstone team at Florida Poly.
+                            Please see all my fantastic work, previous experience, and social links below. If you have
+                            any questions or need clarity, please get in touch with me.
+                        </p>
+                    </div>
                 </div>
             </div>
+
         </div>
 
-        <!--Project Section-->
-        <div id = "project" class = "project-container">
-            <div class = "columns content">
-                <div class="content-container">
-                    <h1>Projects</h1>
-                    <div class = "project-container-under-line">
-                        <hr class = "project-container-line">
+        <!--Experience Section-->
+        <div id = "exp" class = "exp-container">
+
+            <div id = "exp-carousel" class = "carousel slide" data-bs-ride = "carousel">
+
+                <div class = "carousel-indicators">
+                    <button type = "button" data-bs-target = "#exp-carousel" data-bs-slide-to = "0" class = "active" aria-current = "true" aria-label = "Slide 1"></button>
+                    <button type = "button" data-bs-target = "#exp-carousel" data-bs-slide-to = "1" aria-label = "Slide 2"></button>
+                    <button type = "button" data-bs-target = "#exp-carousel" data-bs-slide-to = "2" aria-label = "Slide 3"></button>
+                    <button type = "button" data-bs-target = "#exp-carousel" data-bs-slide-to = "3" aria-label = "Slide 4"></button>
+                    <button type = "button" data-bs-target = "#exp-carousel" data-bs-slide-to = "4" aria-label = "Slide 5"></button>
+                    <button type = "button" data-bs-target = "#exp-carousel" data-bs-slide-to = "5" aria-label = "Slide 6"></button>
+                    <button type = "button" data-bs-target = "#exp-carousel" data-bs-slide-to = "6" aria-label = "Slide 7"></button>
+                </div>
+    
+                <div class = "carousel-inner">
+                    <div class = "carousel-header">Experience
+                        <div class="exp-container-under-line">
+                            <hr class="exp-container-line">
+                        </div>
                     </div>
-                    <p class = "robot-text">
-                        There have been a lot of projects I've been apart of
-                        for academics as well as personal use to help on future projects.
-                        What I have featured on the right is one of my most recent projects worked
-                        in with a group to build a robot that can navigate a terrain and decide
-                        which path to take. This project had the following materials needed to replicate
-                        it:
-                    </p>
-                    <ul>               
-                        <li>1 x Ultrasonic sensor</li>
-                        <li>1 x Parallax Robotics Kit (includes 2 Servo Motors)</li>
-                        <li>1 x Arduino Uno Rev 3</li>
-                        <li>1 x Raspberry Pi model 3B</li>
-                        <li>1 x Pi Camera</li>
-                    </ul>
-                    <p class = "robot-text">
-                        For more information about this project as well
-                        as the coding for it, click the "Project" button for more information. 
-                        For all of my projects, click on the "Github" button to view more projects
-                        created by me and if you have any questions, please contact me and I'll be happy to answer them.
-                    </p>
-                    <div class = "robot-button">
-                        <a class = "button-icon-project" href = "https://github.com/Gipper1998/EEL4660C-Robotics-Project">Project</a>
-                        <a class = "button-icon-github" href = "https://github.com/Gipper1998">Github <img class = "github-project-icon" src="icons/project-github-icon.png" alt=""></a>
+                    <div class = "carousel-item active exp-item">
+                        <img src = "images/robot.jpeg" class = "d-block w-100 exp-image">
+                        <div class = "carousel-caption top-0">
+                            <h1 class = "exp-image-head">Robotics</h1>
+                            <h3 class = "exp-year">2023 - Present</h3>
+                            <p class = "exp-image-body">
+                                Learning about robotics and the different types of path planning algorithms have always intrigued
+                                me in the direction of where robotics is heading in the future. My background with robotics features
+                                being able to run Servo and DC Motors connected to an Arduino Uno to operate. In addition, a Raspberry Pi 
+                                would be used for communicating to the Arduino to direct which path the robot should move in terms of it's
+                                current surrounding. 
+                            </p>
+                        </div>
+                    </div>
+                    <div class = "carousel-item exp-item">
+                        <img src = "images/grove-photo.jpg" class = "d-block w-100 exp-image">
+                        <div class = "carousel-caption top-0 text-box">
+                            <h1 class = "exp-image-head">Grimal Grove</h1>
+                            <h3 class = "exp-year">Aug 2016 - Jan 2017</h3>
+                            <p class = "exp-image-body">
+                                Back in my hometown in the Florida Keys, I volunteered for a small organization called
+                                Grimal Grove, a non-for profit that helped revitalizing a plot of land to host rare and exotic
+                                fruit trees. It's been a long time since I was last able to see the progress of such a wonderful
+                                project to be apart of, but I know it'll do well for educating future generations to learn
+                                about our wonderful environment, and some fruit trees on the side.
+                            </p>
+                        </div>
+                    </div>
+                    <div class = "carousel-item exp-item">
+                        <img src = "images/intern-photo.jpg" class = "d-block w-100 exp-image">
+                        <div class="carousel-caption top-0 text-box">
+                            <h1 class = "exp-image-head">Intern</h1>
+                            <h3 class = "exp-year">May 2023 - Aug 2023</h3>
+                            <p class = "exp-image-body">
+                                Interned at a small internet company in the Tallahassee area called Nettally. Through my
+                                time I helped with database management and was in the works of developing a small website
+                                using HTML, CSS, and JavaScript.
+                            </p>
+                        </div>
+                    </div>
+                    <div class = "carousel-item exp-item">
+                        <img src = "images/polycon-photo.jpg" class = "d-block w-100 exp-image">
+                        <div class="carousel-caption top-0 text-box">
+                            <h1 class = "exp-image-head">Florida Polycon</h1>
+                            <h3 class = "exp-year">Sep 2023 - Present</h3>
+                            <p class = "exp-image-body">
+                                Florida Polycon is a convention-style event located at Florida Polytechnic University. My part in running
+                                one of the largest events at Florida Poly as Vice President of Vendors is coordinating with vendors located within Central Florida 
+                                and across the U.S. in negotiations for rendering services and leading our exhibitor shopping area. There was a lot of communicating between exhibitors/vendors,
+                                multiple departments of not only Polycon, but the University as a whole.
+                            </p>
+                        </div>
+                    </div>
+                    <div class = "carousel-item exp-item">
+                        <img src = "images/orientation-image.jpg" class = "d-block w-100 exp-image">
+                        <div class="carousel-caption top-0 text-box">
+                            <h1 class = "exp-image-head">Orientation Leader</h1>
+                            <h3 class = "exp-year">May 2023 - Dec 2023</h3>
+                            <p class = "exp-image-body">
+                                As an Orientation Leader, the important task is not only to make the incoming student's life a lot easier, but
+                                guide them in how Florida Poly functions. Talking about the do's and don'ts, best places to take a break, involvement, and 
+                                about what the University can provide and help support every student on campus.
+                            </p>
+                        </div>
+                    </div>
+                    <div class = "carousel-item exp-item">
+                        <img src = "images/reslife-photo.JPG" class = "d-block w-100 exp-image">
+                        <div class="carousel-caption top-0 text-box">
+                            <h1 class = "exp-image-head">Resident Assistant</h1>
+                            <h3 class = "exp-year">May 2021 - May 2022</h3>
+                            <p class = "exp-image-body">
+                                Before transferring from Florida Tech to Florida Poly, being a Resident Assistant (RA) helped bring my leadership skills and
+                                development of the person I wanted to be, mindful, resourceful, and creative. Throughout my time as an RA, my task was to make 
+                                educational events for all residents relating to campus resources and best tips of how to survive college, in addition to monitoring the residence hall.
+                                During my time, I was awarded with the Silent Performer of the year for contributing many ideas and assisting residents without needing to ask.
+                            </p>
+                        </div>
+                    </div>
+                    <div class = "carousel-item exp-item">
+                        <img src = "images/ulead-sga.jpeg" class = "d-block w-100 exp-image">
+                        <div class="carousel-caption top-0 text-box">
+                            <h1 class = "exp-image-head">SGA</h1>
+                            <h3 class = "exp-year">Sep 2023 - Present</h3>
+                            <p class = "exp-image-body">
+                                Representative of the Student Government Association for all engineers at Florida Poly. The mission I bring is to expand
+                                opportunities for engineers and listen to all students concerns and come to a resolution to make the Florida Poly a better place. While
+                                being a representative, I currently serve as the Vice-Chair for Advocacy and Communications Committee, where ideas are made to help
+                                bring awareness to SGA and voice their concerns.
+                            </p>
+                        </div>
                     </div>
                 </div>
+    
+                <button class="carousel-control-prev" type="button" data-bs-target="#exp-carousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#exp-carousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <div class = "columns image" style = "background-image:url('images/robot.jpeg')"></div>
         </div>
         
-        <!--Experience Section-->
-        <div id = "exp" class = "exp-container-header">
-            <h1>
-                Experience
-            </h1>
-            <div class = "exp-container-under-line">
-                <hr class = "exp-container-line">
-            </div>
-            <div class = "exp-grid">
-                <div class = "exp-view">
-                    <div class = "exp-image-view">
-                        <a href = "https://flpolycon.org/"><img class = "exp-image" src = "images/polycon-photo.jpg"></a>
-                    </div>
-    
-                    <div class = "exp-text">
-                        <h2>
-                            Florida Polycon
-                        </h2>
-                        <p>
-                            Florida Polycon is a student-run organization under the guidance of Florida Polytechnic University's Student Government Association that runs an annual convention-style event that brings in over 2000 visitors to the University.
-                            I started in 2022 as the Vendor-Events Coordinator, communicating with all vendors such as Fireworks, Food Trucks, and so much more.
-                            Now I serve as the Vice President of Vendors for 2023, which directs all vendors in the exhibitor space to conclude my senior year at the University.
-                        </p>
-                    </div>
-                </div>
-    
-                <div class = "exp-view">
-                    <div class = "exp-image-view">
-                        <a href = "https://support.nettally.com/"><img class = "exp-image" src = "images/intern-photo.jpg"></a>
-                    </div>
-    
-                    <div class = "exp-text">
-                        <h2>
-                            Intern at Nettally
-                        </h2>
-                        <p>
-                            To gain real-world knowledge and experience, I interned for Nettally (Network Tallahassee), a small company located in Tallahassee that helps provide internet, email, and phone service to their community in 2023.
-                             While learning some network terminology, I helped develop a website for the company (www.nettally.com) and helped with customer relations.
-                        </p>
-                    </div>
-                </div>
-    
-                <div class = "exp-view">
-                    <div class = "exp-image-view">
-                        <a href = "https://floridapoly.edu/student-affairs/incoming-phoenixes/index.php">
-                            <img class = "exp-image" src = "images/orientation-image.jpg">
-                        </a>
-                    </div>
-    
-                    <div class = "exp-text">
-                        <h2>
-                            Orientation Leader
-                        </h2>
-                        <p>
-                            In the Fall of 2023, I became an Orientation Leader for the University under the New Student and Family Program at Florida Polytechnic University. 
-                            During this process, I helped the newly incoming class of 2027 transition from the High School to the University lifestyle by letting them know the resources available if they need any assistance. 
-                            In addition, answering any questions they have as well as touch base with them throughout their first semester at the University.
-                        </p>
-                    </div>
-                </div>
-    
-                <div class = "exp-view">
-                    <div class = "exp-image-view">
-                        <a href = "https://www.fit.edu/reslife/staff/"><img class = "exp-image" src = "images/reslife-photo.JPG"></a>
-                    </div>
-    
-                    <div class = "exp-text">
-                        <h2>
-                            Resident Assistant
-                        </h2>
-                        <p>
-                            At the Florida Insitute of Technology for the Fall of 2021 and Spring of 2022, I became a Resident Assistant (RA) of Roberts Hall, a dorm that only allows first-year students. 
-                            I served as a role model throughout the dorms answering any questions, maintaining policies, and running small events to bring awareness of various topics such as diversity and campus resources. 
-                            I also was a part of helping transition the first years from High School to the University lifestyle.
-                        </p>
-                    </div>
-                </div>
-    
-                <div class = "exp-view">
-                    <div class = "exp-image-view">
-                        <a href = "#exp"><img class = "exp-image" src = "images/fireworks.jpg"></a>
-                    </div>
-    
-                    <div class = "exp-text">
-                        <h2>
-                            Accomplishments
-                        </h2>
-                        <p>
-                            Many accolades were awarded to me inside and outside of academics. 
-                            I will always be grateful for achievements from any department, but it's not the end of my goals. 
-                            It only pushes me to continue moving forward and accomplish much more than anyone else in any industry. 
-                            The following accolades I received are listed as follows:
-                        </p>
-                        <ul style = "padding-left: 20px;">
-                            <li>Silent Performer of the Year - Florida Tech Residential Life</li>
-                            <li>Provost List - Florida Polytechnic University</li>
-                            <li>Presidents List - College of the Florida Keys</li>
-                        </ul>
-                    </div>
-                </div>
-    
-                <div class = "exp-view">
-                    <div class = "exp-image-view">
-                        <a href = "http://www.grimalgrove.com/"><img class = "exp-image" src = "images/grove-photo.jpg"></a>
-                    </div>
-    
-                    <div class = "exp-text">
-                        <h2>
-                            Grimal Grove
-                        </h2>
-                        <p>
-                            Back in 2016, during High School, I helped a small organization called Grimal Grove, a small farm and botanical garden preserving exotic trees for research, education, and the arts. 
-                            It was a chance to volunteer, give back to my local community, and help preserve this iconic landscape in the Florida Keys. 
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!--Game Slider Page-->
-        <div id = "games" class = "game-container-header">
+        <div id="games" class="game-container-header">
             <h1>
                 Games
             </h1>
-            <div class = "game-container-under-line">
-                <hr class = "game-container-line">
+            <div class="game-container-under-line">
+                <hr class="game-container-line">
             </div>
-            <div class = "game-grid">
+            <div class="game-grid">
                 <div class = "game-view">
-                    <div class = "game-image-view">
-                        <a href = "snake.html">
-                            <img class = "game-image" src = "images/snake-preview.png">
-                        </a>
-                    </div>
+                    <a href="snake.html">
+                        <img class="game-image" src="images/snake-preview.png">
+                        <div class = "game-overlay">
+                            <div class = "game-text">Snake</div>
+                        </div>
+                    </a>
+                </div>
 
-                    <div class = "game-text">
-                        <h2>
-                            Snake
-                        </h2>
-                        <p>
-                            Navigate around a small box and collect all the red apple (or squares)
-                            around the board until you die. Remember, don't hit the wall, or yourself
-                            for that matter.
-                        </p>
+                <div class="game-view">
+                    <a class = "game-link" href="tic-tac-toe.html">
+                        <img class="game-image" src="images/tic-tac-toe-preview.png">
+                        <div class = "game-overlay">
+                            <div class = "game-text">Tic-Tac-Toe</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="game-view">
+                    <div class="game-image-view">
+                        <a href="memory.html">
+                            <img class="game-image" src="images/memory-preview.png">
+                            <div class = "game-overlay">
+                                <div class = "game-text">Memory Cards</div>
+                            </div>
+                        </a>
                     </div>
                 </div>
 
-                <div class = "game-view">
-                    <div class = "game-image-view">
-                        <a href = "connect-four.html">
-                            <img class = "game-image" src = "images/connect-4-preview.png">
-                        </a>
-                    </div>
-
-                    <div class = "game-text">
-                        <h2>
-                            Connect 4
-                        </h2>
-                        <p>
-                            A classic, grap your circles and get 4 in a row in any direction. Blocking is the key,
-                            so keep a good eye on the board before your opponent wins (must have 2 players to play).
-                        </p>
-                    </div>
-                </div>
-                        
-                <div class = "game-view">
-                    <div class = "game-image-view">
-                        <a href = "tic-tac-toe.html">
-                            <img class = "game-image" src = "images/tic-tac-toe-preview.png">
-                        </a>
-                    </div>
-
-                    <div class = "game-text">
-                        <h2>
-                            Tic Tac Toe
-                        </h2>
-                        <p>
-                            Get 3 in a row in any direction, first one gets it wins (must have 2 players to play).
-                        </p>
-                    </div>
-                </div>
-    
-                <div class = "game-view">
-                    <div class = "game-image-view">
-                        <a href = "memory.html">
-                            <img class = "game-image" src = "images/memory-preview.png">
-                        </a>
-                    </div>
-
-                    <div class = "game-text">
-                        <h2>
-                            Memory
-                        </h2>
-                        <p>
-                            Cards will be displayed and you must find a match, if you find them all, you win the game!
-                        </p>
-                    </div>
-                </div>
-            
             </div>
         </div>
 
+
         <!--Call on Script for footer-->
         <script src="scripts/script.js"></script>
-        
+
         <!--Conclusion/Footer/Contact-->
         <div id = "contact" class = "footer">
             <div class = "icon-layout">
@@ -362,10 +292,16 @@
                 </div>
                 <div class = "made-by">
                     <p class = "made-by-text">
-                        Website domain by namecheap. Made with html, css, and javascript.
+                        Website domain by namecheap. Made with HTML, CSS, and JavaScript.
                     </p>
                 </div>
             </div>
         </div>
-    </body>
+
+    </div>
+
+
+
+</body>
+
 </html>

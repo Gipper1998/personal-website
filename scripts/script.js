@@ -20,13 +20,13 @@ function checkTop()
 {
     if (window.scrollY == 0)
     {
-        document.getElementById("topHeader").style.backgroundColor = "rgba(75, 125, 112, 0.5)";
+        document.getElementById("topHeader").style.backgroundColor = "rgba(123, 201, 134, 0.1)";
         document.getElementById("topHeader").style.color = "white"
         document.getElementById("topHeader").style.transition = "all 0.5s"
     }
     else
     {
-        document.getElementById("topHeader").style.backgroundColor = "rgba(75, 125, 112, 0.8)";
+        document.getElementById("topHeader").style.backgroundColor = "rgba( 57, 201, 149, 0.3)";
         document.getElementById("topHeader").style.transition = "background-color 0.5s"
     }
 }

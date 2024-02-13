@@ -37,42 +37,8 @@ window.onload = function()
 
 function reset()
 {
-    if (matched != totalMatches)
-    {
-        shuffleCards();
-    }
-    firstFlip = false;
-    count = 0, second = 0;
-    setTimeout(() => {
-        shuffleCards();
-        document.getElementById("time").innerHTML = "0s";
-    }, 200);
-}
-
-function updateMatches()
-{
-    let matchDoc = document.getElementById("matches");
-    let totalMatchDor = document.getElementById("matches-left");
-    matchDoc.innerHTML = matched;
-    totalMatchDor.innerHTML = (totalMatches - matched);
-    
-}
-
-function startTimer()
-{
-    if (firstFlip && gameStart)
-    {
-        count+= 10;
-        if (count == 1000)
-        {
-            second++;
-            count = 0;
-        }
-
-        let secondStr = second + "s";
-        document.getElementById("time").innerHTML = secondStr;
-        setTimeout(startTimer, 10);
-    }
+    document.getElementById("reset").style.visibility = "hidden";
+    location.reload();
 }
 
 function flipCard({target: clickedCard}) 
@@ -81,7 +47,6 @@ function flipCard({target: clickedCard})
     {
         firstFlip = true;
         gameStart = true;
-        startTimer();
     }
     // Double check card flip
     if(cardOne != clickedCard && !disableDeck) 
@@ -125,8 +90,8 @@ function matchCards(img1, img2)
         if (matched == totalMatches)
         {
             gameStart = false;
+            document.getElementById("reset").style.visibility = "visible";
         }
-        updateMatches();
 
         // Once the events are removed, the deck can be reopened and the two cards will be reset.
         cardOne.removeEventListener("click", flipCard);
@@ -144,7 +109,6 @@ function matchCards(img1, img2)
     setTimeout(() => {
         cardOne.classList.remove("shake", "flip");
         cardTwo.classList.remove("shake", "flip");
-        console.log("flipped");
         cardOne = cardTwo = "";
         disableDeck = false;
     }, 1000);

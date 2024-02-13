@@ -37,7 +37,6 @@ window.onload = function()
 {
     randomQuote();
     playerTurn = pieces[getRndInteger(0, 1)];
-    updateTurn();
     update();
 }
 
@@ -48,7 +47,6 @@ function update()
         const doc = document.getElementById(i.toString());
         doc.addEventListener("click", function()
         {
-            updateTurn();
             if (this.innerHTML === "" && !gameEnd)
             {
                 // Find the place where clicked and place with class
@@ -75,7 +73,6 @@ function update()
                     playerTurn = "F";
                 }
             }
-            updateTurn();
         });
     }
 
@@ -83,16 +80,8 @@ function update()
     const reset = document.getElementById("reset");
     reset.addEventListener("click", function() 
     {
-        for (let i = 0; i < 9; i++) 
-        {
-            document.getElementById(i.toString()).innerHTML = "";
-            document.getElementById(i.toString()).classList.remove("x");
-            document.getElementById(i.toString()).classList.remove("o");
-            document.getElementById(i.toString()).classList.remove("shimmer");
-        }
-        gameEnd = false;
-        playerTurn = pieces[getRndInteger(0, 1)];
-        updateTurn();
+        document.getElementById("reset").style.visibility = "hidden";
+        location.reload();
     });    
 }
 
@@ -113,26 +102,10 @@ function checkWin()
             document.getElementById(winPositions[i][1].toString()).classList.add("shimmer");
             document.getElementById(winPositions[i][2].toString()).classList.add("shimmer"); 
             gameEnd = true;
+            document.getElementById("reset").style.visibility = "visible";
         }
     }
 }
 
-function updateTurn()
-{
-    let turnBoard = document.getElementById("turn-check");
-    if (playerTurn == "X")
-    {
-        turnBoard.style.color = "blue";
-    }
-    else if (playerTurn == "O")
-    {
-        turnBoard.style.color = "red";
-    }
-    else
-    {
-        turnBoard.style.color = "green";
-    }
-    turnBoard.innerHTML = playerTurn;
-}
 
 

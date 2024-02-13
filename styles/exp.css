@@ -1,136 +1,115 @@
-.exp-container-header
-{
-    padding-top: 50px;
-    background-color: lightgray;
-}
 
-.exp-container-header h1
+.carousel-header
 {
+    display: block;
+    z-index: 1;
     text-align: center;
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 40px;
+    font-weight: bolder;
+    color: rgb(242, 245, 78);
 }
 
 .exp-container-under-line
 {
     padding: 5px;
     margin: 0;
-    background-color: lightgray;
 }
 
 .exp-container-line
 {
     padding: 0;
     display: flex;
-    width: 50px;
+    width: 80px;
+    border-bottom:3px solid;
+    border-radius: 200px;
     margin: auto;
 }
 
-.exp-grid
+.exp-container
 {
-    display: grid;
-    padding: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
-    background-color: lightgray;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 40px;
-    row-gap: 40px;
+    padding-top: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
 }
 
-.exp-view
+
+.exp-item
 {
-    border-style: solid;
-    overflow: scroll;
-    height: 400px;
-    background-color: rgb(167, 167, 167);
+    height: 800px;
+    transition: 0.3s;
+
 }
 
-.exp-image-view
+.carousel-inner 
 {
-    margin-bottom: 8px;
-    position: relative;
+    border-radius: 20px;
+    background-color: rgba(0,0,0,0);
+    overflow: hidden;
 }
 
 .exp-image
 {
-    width: 100%;
-    height: 350px;
-    transition: 0.2s;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(60%);
 }
 
-.exp-image:hover
+.exp-image-head
 {
-    opacity: 0.5;
-}
-
-.exp-image:active
-{
-    opacity: 0.8;
-}
-
-.exp-text
-{
-    margin: 0;
-    padding: 0;
-}
-
-.exp-text h2
-{
+    margin-top: 200px;
+    font-size: 60px;
+    font-weight: bold;
     text-align: center;
 }
 
-.exp-text p
+.exp-image-body
 {
-    text-align: center;
-    font-size: 16px;
-    padding: 10px;
+    font-size: 30px;
+    font-weight: normal;
+
 }
 
-.exp-text ul
+.exp-year
 {
-    margin-left: 20px;
-    padding: 10px;
+    font-size: 18px;
+    color: rgb(210, 210, 210);
+    padding-bottom: 5px;
 }
 
-@media screen and (max-width: 800px) 
+.carousel-inner > .item 
 {
-    .exp-grid
-    {
-        grid-gap: 16px;
-        padding: 30px;
-        grid-template-columns: repeat(auto-fill,minmax(320px,1fr));
-        grid-auto-flow: column;
-        grid-auto-columns: minmax(350px,1fr);
-        overflow-x: auto;
-    }
-    .exp-view
-    {
-        overflow: scroll;
-        height: 500px;
-    }
+    position: relative;
+    display: none;
+    -webkit-transition: 0.6s ease-in-out left;
+    -moz-transition: 0.6s ease-in-out left;
+    -o-transition: 0.6s ease-in-out left;
+    transition: 0.6s ease-in-out left;
+}
 
-    .exp-image
+@media screen and (max-width: 750px) 
+{
+    .exp-image-head
     {
-        width: 100%;
-        height: 300px;
-        transition: 0.2s;
-    } 
-
-    .exp-text h2
-    {
-        font-size: 32px;
+        margin-top: 80px;
     }
 
-    .exp-text p
+    .exp-image-body
     {
         font-size: 20px;
-        padding: 10px;
     }
+}
+
+@media screen and (max-width: 850px) 
+{
     
-    .exp-text ul
+    .exp-image-body
     {
-        margin-left: 10px;
-        padding: 10px;
         font-size: 20px;
     }
 }

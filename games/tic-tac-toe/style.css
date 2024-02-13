@@ -3,7 +3,7 @@
     padding-top: 35px;
 }
 
-.bg
+.game-background-image
 {
     background-image: url("/images/pixel-town.jpg");
     background-size: 100% 100%;
@@ -95,15 +95,12 @@ td
     100% {-webkit-mask-position:left}
 }
 
-.button-row
-{
-    padding: 35px;
-}
-
-.site-button
+#reset
 {
     font-size: 16px;
     padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     margin-left: 10px;
     margin-right: 10px;
     transition: 0.2s;
@@ -112,44 +109,18 @@ td
     background-color: rgba(216, 112, 147, 0.818);
     color: white;
     font-weight: bold;
+    visibility: hidden;
 }
 
-#turn-check
-{
-    font-size: 24px;
-    padding: 5px;
-    margin-left: 40px;
-    margin-right: 40px;
-    transition: 0.2s;
-    border-radius: 5px;
-    border-style: none;
-    background-color: rgba(255, 255, 255, 0.818);
-    color: rgb(15, 77, 221);
-    font-weight: bold;
-}
-
-.site-button:hover
+#reset:hover
 {
     cursor: pointer;
     opacity: 0.7;
 }
 
-.site-button:active
+#reset:active
 {
     background-color: lightsalmon;
-}
-
-.art-made
-{
-    display: inline-flex;
-    border-style: solid;
-    border-color:rgb(183, 255, 231);
-    background-color: white;
-    opacity: 0.5;
-    font-weight: 700;
-    padding: 8px;
-    border-radius: 15px;
-    color:rgb(3, 136, 136);
 }
 
 #wrapper

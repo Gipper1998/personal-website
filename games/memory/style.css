@@ -1,7 +1,7 @@
 *
 {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .bg
@@ -26,35 +26,19 @@
     transition: 0.2s;
     border-radius: 5px;
     border-style: none;
-    background-color: rgba(216, 112, 147, 0.818);
+    background-color: rgba(125, 47, 222, 0.8);
     color: white;
     font-weight: bold;
-}
-
-.status
-{
-    align-items: center;
-    justify-content: center;
-    text-align: justify;
-    border-style: solid;
-    width: 200px;
-    background-color: rgba(0, 255, 255, 0.756);
-    margin: auto;
-    margin-bottom: 10px;
-    font-weight: 700;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-bottom: 5px;
-    color: rgb(255, 0, 183);
-    border-color: aquamarine;
-    border-radius: 20px;
-    font-size: 16px;
-    margin-top: 15px;
 }
 
 #time, #matches, #matches-left
 {
     color: green;
+}
+
+#reset
+{
+    visibility: hidden;
 }
 
 .site-button:hover
@@ -68,43 +52,22 @@
     background-color: lightsalmon;
 }
 
-.art-made
-{
-    flex-wrap: wrap;
-    border-style: solid;
-    text-align: center;
-    justify-content: center;
-    border-color:rgba(183, 255, 231, 0.9);
-    background-color: rgb(204, 75, 75, 0.5);
-    font-weight: 700;
-    padding: 8px;
-    border-radius: 15px;
-    color:rgb(255, 255, 0);
-}
-
-.text-wrapper
-{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding-top: 20px;
-}
-
 .container
 {
     box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 20px;
+    padding-top: 50px;
 }
 
 /*Game-Box*/
 .wrapper
 {
+    margin-top: 20px;
     padding: 25px;
     border-radius: 10px;
+
     background: rgba(125, 47, 222, 0.8);
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
