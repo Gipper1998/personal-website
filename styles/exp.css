@@ -43,7 +43,7 @@
 {
     height: 800px;
     transition: 0.3s;
-
+    overflow-y: scroll;
 }
 
 .carousel-inner 
@@ -97,6 +97,7 @@
     .exp-image-head
     {
         margin-top: 80px;
+        font-size: 30px;
     }
 
     .exp-image-body
