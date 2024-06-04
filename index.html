@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet'>
 
     <!--External Style Sheets-->
     <link rel="stylesheet" type="text/css" href="styles/general.css">
@@ -48,8 +49,52 @@
         </div>
     </div>
 
-    <!---Top of page-->
-    <div class=top-page-image></div>
+    <!---Top of page (top images)-->
+    <div class = "top-container">
+        <img class = "top-container-image" src="images/poly-grad1.jpg" alt = "" style= "object-position: center 40%;">
+        <img class = "top-container-image" src="images/trent-mit.PNG" alt = "" style = "object-position: center 10%;">
+        <img class = "top-container-image" src="images/poly-grad2.jpg" style = "object-position: center 50%;">
+    </div>
+
+    <!--Bottom Container (bottom images and text)-->
+    <div class = "bottom-container">
+        <img class = "bottom-container-image" src="images/Roberts_Trent_Vertical.jpg" alt="">
+        <div class = "middle-container">
+
+            <div class = "middle-text">
+                <h1>Trent Halama</h1>
+                <p style="padding: 20px;"></p>
+                <p>Bachelor of Science</p>
+                <p>Computer Engineering</p>
+                <p style="padding: 20px;"></p>
+                <p>Florida Polytechnic University</p>
+                <p>Class of 2024</p>
+            </div>
+
+            <img class = "middle-container-image" src="images/Polycon-Cool-Fireworks.jpg" alt="">
+        </div>
+        <img class = "bottom-container-image" src="images/halama-trent-goofy-photo.png" alt="">
+    </div>
+
+    <!--Mobile display-->
+    <div class = "mobile-container">
+
+        <img class = "top-mobile-img" src="images/Back-Fireworks.jpg" alt="">
+
+        <div class = "mobile-text">
+            <h1>Trent Halama</h1>
+            <p style="padding: 20px;"></p>
+            <p>Bachelor of Science</p>
+            <p>Computer Engineering</p>
+            <p style="padding: 20px;"></p>
+            <p>Florida Polytechnic University</p>
+            <p>Class of 2024</p>
+        </div>
+
+        <img class = "bottom-mobile-img" src="images/Back-Fireworks.jpg" alt="">
+
+    </div>
+
 
     <!--Background for website image to display-->
     <div class="background">
@@ -68,21 +113,19 @@
                 </div>
                 <div class="about-container" style="padding-bottom: 30px;">
                     <div class="about-image-section">
-                        <img class="profile-picture" src="images/halama-trent-22-02-15-6356(2).png">
+                        <img class="profile-picture" src="images/halama-trent-professional-photo.png">
                     </div>
                     <div class="about-text-section">
                         <p>
-                            Thank you for visiting my website. I'm Trent, a senior at Florida Polytechnic Engineering
-                            student studying Computer Engineering.
-                            Previously, I transferred from the Florida Institute of Technology as a Resident Assistant
-                            and graduated from the College of the Florida Keys with an Associate of Arts degree.
-                            I have obtained many goals thus far and am continuously pursuing new ones that are bigger,
-                            bolder, and more impractical.
-                            While studying Computer Engineering, I developed a background in back-end and front-end
-                            coding, with additional robotics-related projects, and I developed a rover that can move
-                            autonomously with the support of the Florida Space Institute Capstone team at Florida Poly.
-                            Please see all my fantastic work, previous experience, and social links below. If you have
-                            any questions or need clarity, please get in touch with me.
+                            Thank you for visiting my website! I'm Trent, a Graduate from Florida Polytechnic University  
+                            who earned a Bachelor of Science in Computer Engineering with ABET accreditation.
+                            Previously, I transferred from the Florida Institute of Technology as a Resident Assistant,
+                            and Graduated from the College of the Florida Keys with an Associate of Arts degree.
+                            Throughout my studies and during my off time, I have been involved in experimenting with Embedded
+                            and Software Engineering projects and leadership roles within and outside of Academics.
+                            I am open to new opportunities that will be mutually beneficial, contributing to your organization's
+                            success while advancing my career. To learn more, scroll down to see my experience and my contact page, 
+                            where you can reach out and discuss how we can collaborate.
                         </p>
                     </div>
                 </div>
@@ -103,6 +146,9 @@
                     <button type = "button" data-bs-target = "#exp-carousel" data-bs-slide-to = "4" aria-label = "Slide 5"></button>
                     <button type = "button" data-bs-target = "#exp-carousel" data-bs-slide-to = "5" aria-label = "Slide 6"></button>
                     <button type = "button" data-bs-target = "#exp-carousel" data-bs-slide-to = "6" aria-label = "Slide 7"></button>
+                    <button type = "button" data-bs-target = "#exp-carousel" data-bs-slide-to = "7" aria-label = "Slide 8"></button>
+                    <button type = "button" data-bs-target = "#exp-carousel" data-bs-slide-to = "8" aria-label = "Slide 9"></button>
+                    <button type = "button" data-bs-target = "#exp-carousel" data-bs-slide-to = "9" aria-label = "Slide 10"></button>
                 </div>
     
                 <div class = "carousel-inner">
@@ -112,36 +158,8 @@
                         </div>
                     </div>
                     <div class = "carousel-item active exp-item">
-                        <img src = "images/robot.jpeg" class = "d-block w-100 exp-image">
-                        <div class = "carousel-caption top-0">
-                            <h1 class = "exp-image-head">Robotics</h1>
-                            <h3 class = "exp-year">2023 - Present</h3>
-                            <p class = "exp-image-body">
-                                Learning about robotics and the different types of path planning algorithms have always intrigued
-                                me in the direction of where robotics is heading in the future. My background with robotics features
-                                being able to run Servo and DC Motors connected to an Arduino Uno to operate. In addition, a Raspberry Pi 
-                                would be used for communicating to the Arduino to direct which path the robot should move in terms of it's
-                                current surrounding. 
-                            </p>
-                        </div>
-                    </div>
-                    <div class = "carousel-item exp-item">
-                        <img src = "images/grove-photo.jpg" class = "d-block w-100 exp-image">
-                        <div class = "carousel-caption top-0 text-box">
-                            <h1 class = "exp-image-head">Grimal Grove</h1>
-                            <h3 class = "exp-year">Aug 2016 - Jan 2017</h3>
-                            <p class = "exp-image-body">
-                                Back in my hometown in the Florida Keys, I volunteered for a small organization called
-                                Grimal Grove, a non-for profit that helped revitalizing a plot of land to host rare and exotic
-                                fruit trees. It's been a long time since I was last able to see the progress of such a wonderful
-                                project to be apart of, but I know it'll do well for educating future generations to learn
-                                about our wonderful environment, and some fruit trees on the side.
-                            </p>
-                        </div>
-                    </div>
-                    <div class = "carousel-item exp-item">
                         <img src = "images/intern-photo.jpg" class = "d-block w-100 exp-image">
-                        <div class="carousel-caption top-0 text-box">
+                        <div class="carousel-caption top-0">
                             <h1 class = "exp-image-head">Intern</h1>
                             <h3 class = "exp-year">May 2023 - Aug 2023</h3>
                             <p class = "exp-image-body">
@@ -152,15 +170,72 @@
                         </div>
                     </div>
                     <div class = "carousel-item exp-item">
-                        <img src = "images/polycon-photo.jpg" class = "d-block w-100 exp-image">
+                        <img src = "images/rassor.png" class = "d-block w-100 exp-image">
+                        <div class = "carousel-caption top-0">
+                            <h1 class = "exp-image-head">FSI-NASA Capstone</h1>
+                            <h3 class = "exp-year">2023</h3>
+                            <p class = "exp-image-body">
+                                I was a part of an amazing Capstone team with it's main objecting being to dig a flag walled and floored trench
+                                from the top of a lunar crater to the bottom. This will be done using a RASSOR rover by adding a flywheel based digging tool
+                                that can be mounted to perform the operation at a fifteen degree angle. Throughout the project there was autonomous system being developed,
+                                the flywheel contraception, and developing the circuit model for moving around the terrain using LiDAR sensors and DC motors. The RASSOR pictured
+                                was provided by the Florida Space Institute (FSI) whom works in conjunction with the National Aeronautics and Space Administration (NASA).
+                            </p>
+                        </div>
+                    </div>
+                    <div class = "carousel-item exp-item">
+                        <img src = "images/robot.jpeg" class = "d-block w-100 exp-image">
+                        <div class = "carousel-caption top-0">
+                            <h1 class = "exp-image-head">Robotics Project</h1>
+                            <h3 class = "exp-year">2023</h3>
+                            <p class = "exp-image-body">
+                                During the Spring of 2023, I was part of a team collaborating to make a three-wheeled robot system that 
+                                navigates a miniature obstacle course to learn how to make a semi-autonomous robot. While it doesn't have 
+                                significant AI functionality, it detects if an object is close by using ultrasonic sensors and checks its 
+                                surrounding areas before proceeding. Please see my Github project labeled "EEL4660C-Robotics-Project" for 
+                                more information (project code) and the parts required.
+                            </p>
+                        </div>
+                    </div>
+                    <div class = "carousel-item exp-item">
+                        <img src = "images/documentsdully.png" class = "d-block w-100 exp-image">
+                        <div class = "carousel-caption top-0">
+                            <h1 class = "exp-image-head">Unity Game (Documents Duly)</h1>
+                            <h3 class = "exp-year">2024</h3>
+                            <p class = "exp-image-body">
+                                During the Spring of 2024, I was part of a team collaborating to make a Virtual Reality game inspired
+                                by Papers Please to create "Documents Dully." The main functionality is to verify passports to see if
+                                they are good to enter into a new country, or is denied entry. It was developed using Unity version
+                                2021.3.16f1 with OpenXR tools enabled with the Oculus Rift S headset for testing. Mixamo was also used
+                                to make the characters come to life. My Github page includes the Unity project as a contributor for 
+                                anyone to take a look, for game play footage please contact me for more information.
+                            </p>
+                        </div>
+                    </div>
+                    <div class = "carousel-item exp-item">
+                        <img src = "images/mobilesecurity.png" class = "d-block w-100 exp-image">
+                        <div class = "carousel-caption top-0">
+                            <h1 class = "exp-image-head">JavaFX and SQL Game</h1>
+                            <h3 class = "exp-year">2024</h3>
+                            <p class = "exp-image-body">
+                                During the Spring of 2024, I was part of a team collaborating to make a small little game that involved
+                                training users about mobile security threats and how to appropriately take action against them. Using JavaFX as
+                                the GUI and an MySQL server to store user data, the main goal was to answer questions correctly. From there, admin
+                                can see users score and determine if they pass or fail the training. It also shows high scores and has setting options. 
+                                My Github page links to the project named "MobileSecuritySoftware" as a contributor for anyone to take a look at.
+                            </p>
+                        </div>
+                    </div>
+                    <div class = "carousel-item exp-item">
+                        <img src = "images/polycon.jpg" class = "d-block w-100 exp-image" style = "object-position: center 20%;">
                         <div class="carousel-caption top-0 text-box">
                             <h1 class = "exp-image-head">Florida Polycon</h1>
-                            <h3 class = "exp-year">Sep 2023 - Present</h3>
+                            <h3 class = "exp-year">Sep 2022 - May 2024</h3>
                             <p class = "exp-image-body">
-                                Florida Polycon is a convention-style event located at Florida Polytechnic University. My part in running
-                                one of the largest events at Florida Poly as Vice President of Vendors is coordinating with vendors located within Central Florida 
-                                and across the U.S. in negotiations for rendering services and leading our exhibitor shopping area. There was a lot of communicating between exhibitors/vendors,
-                                multiple departments of not only Polycon, but the University as a whole.
+                                Florida Polycon (at the time of writing) is a convention-style event located at Florida Polytechnic University. The two years
+                                I was a part of the planning committee was coordinating with Outside Vendors in the Central Florida area, and in my last year
+                                coordinating and overseeing Exhibitors selling variety of items. One major accomplishment I contributed to the Florida Polycon
+                                team was help assist and coordinate the second and third University's Firework display showcase for the conclusion of the convention.
                             </p>
                         </div>
                     </div>
@@ -170,9 +245,22 @@
                             <h1 class = "exp-image-head">Orientation Leader</h1>
                             <h3 class = "exp-year">May 2023 - Dec 2023</h3>
                             <p class = "exp-image-body">
-                                As an Orientation Leader, the important task is not only to make the incoming student's life a lot easier, but
-                                guide them in how Florida Poly functions. Talking about the do's and don'ts, best places to take a break, involvement, and 
-                                about what the University can provide and help support every student on campus.
+                                As an Orientation Leader, the important task was to not only to make the incoming student's life a lot easier, but
+                                guide them in how Florida Polytechnic University functions. Talking about the do's and don'ts, best places to take 
+                                a break, and where to get involved on campus throughout their 4 years.
+                            </p>
+                        </div>
+                    </div>
+                    <div class = "carousel-item exp-item">
+                        <img src = "images/ulead-sga.jpeg" class = "d-block w-100 exp-image">
+                        <div class="carousel-caption top-0 text-box">
+                            <h1 class = "exp-image-head">SGA</h1>
+                            <h3 class = "exp-year">Sep 2023 - May 2024</h3>
+                            <p class = "exp-image-body">
+                                Representative of the Student Government Association for all Engineers at Florida Polytechnic University. My main position
+                                was to not only expand Engineering opportunities, but also to listen to student's in how the University not only functions, but 
+                                make it a better experience for them as a whole. That is one of the main reasons why I decided to be Vice Chair of the Advocacy
+                                and Communications Committee in SGA, to represent students on their behalf to voice their concerns.
                             </p>
                         </div>
                     </div>
@@ -190,15 +278,16 @@
                         </div>
                     </div>
                     <div class = "carousel-item exp-item">
-                        <img src = "images/ulead-sga.jpeg" class = "d-block w-100 exp-image">
-                        <div class="carousel-caption top-0 text-box">
-                            <h1 class = "exp-image-head">SGA</h1>
-                            <h3 class = "exp-year">Sep 2023 - Present</h3>
+                        <img src = "images/grove-photo.jpg" class = "d-block w-100 exp-image">
+                        <div class = "carousel-caption top-0 text-box">
+                            <h1 class = "exp-image-head">Grimal Grove</h1>
+                            <h3 class = "exp-year">Aug 2016 - Jan 2017</h3>
                             <p class = "exp-image-body">
-                                Representative of the Student Government Association for all engineers at Florida Poly. The mission I bring is to expand
-                                opportunities for engineers and listen to all students concerns and come to a resolution to make the Florida Poly a better place. While
-                                being a representative, I currently serve as the Vice-Chair for Advocacy and Communications Committee, where ideas are made to help
-                                bring awareness to SGA and voice their concerns.
+                                Back in the Florida Keys (my hometown), I volunteered for a small organization called
+                                Grimal Grove, a non-for profit that helped revitalizing a plot of land to host rare and exotic
+                                fruit trees. It's been a long time since I was last able to see the progress of such a wonderful
+                                project to be apart of, but I know it'll do well for educating future generations to learn
+                                about our wonderful environment, and some fruit trees on the side.
                             </p>
                         </div>
                     </div>

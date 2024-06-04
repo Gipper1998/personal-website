@@ -15,6 +15,226 @@ p
     padding: 0;
 }
 
+.top-container
+{
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    overflow: hidden;
+}
+
+.top-container-image
+{
+    width: 33.33%;
+    height: auto;
+    object-fit: cover;
+}
+
+.bottom-container
+{
+    display: grid;
+    grid-template-columns: 0.75fr 1fr 0.75fr;
+}
+
+.bottom-container-image
+{
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+
+}
+
+.middle-container
+{
+    display: grid;
+    grid-template-rows: 0.5fr, 0.5fr;
+    position: relative;
+    font-family: 'Cinzel';
+    background-color: #1e2c33;
+    color: white;
+}
+
+.middle-container-image
+{
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    object-fit: cover;
+    bottom: 0; 
+    left: 0; 
+}
+
+
+.middle-text h1
+{
+    font-size: 80px;
+    letter-spacing: -5px;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: -5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    white-space: nowrap;
+}
+
+.middle-text p
+{
+    font-size: 25px;
+    padding: 0px;
+    margin: 0px;
+    white-space: nowrap;
+
+    text-align: center;
+}
+
+.mobile-container
+{
+    display: none;
+}
+
+@media screen and (max-width: 900px) 
+{
+    .middle-text h1
+    {
+        font-size: 60px;
+        letter-spacing: -5px;
+        font-weight: bolder;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: -5px;
+        padding-left: 15px;
+        padding-right: 15px;
+        white-space: nowrap;
+    }
+
+    .middle-text p
+    {
+        font-size: 23px;
+        padding: 0px;
+        margin: 0px;
+        white-space: nowrap;
+
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 800px) 
+{
+    .mobile-text h1
+    {
+        font-size: 40px;
+        letter-spacing: -5px;
+        font-weight: bolder;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: -5px;
+        padding-left: 15px;
+        padding-right: 15px;
+        white-space: nowrap;
+    }
+
+    .mobile-text p
+    {
+        font-size: 21px;
+        padding: 0px;
+        margin: 0px;
+        white-space: nowrap;
+        padding-left: 5px;
+        padding-right: 5px;
+        text-align: center;
+    }
+
+    .middle-text h1
+    {
+        padding-top: 25px;
+        font-size: 40px;
+        letter-spacing: -5px;
+        font-weight: bolder;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: -5px;
+        padding-left: 15px;
+        padding-right: 15px;
+        white-space: nowrap;
+    }
+
+    .middle-text p
+    {
+        font-size: 21px;
+        padding: 0px;
+        margin: 0px;
+        white-space: nowrap;
+        padding-left: 5px;
+        padding-right: 5px;
+
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 700px) 
+{
+    .top-container
+    {
+        display: none;
+    }
+
+    .top-container-image
+    {
+        display: none;
+
+    }
+
+    .middle-text
+    {
+        display: none;
+    }
+
+    .bottom-container
+    {
+        display: none;
+    }
+
+    .bottom-container-image
+    {
+        display: none;
+    }
+
+    .middle-container-image
+    {
+        display: none;
+
+    }
+
+    .middle-container-text
+    {
+        display: none;
+    }
+
+    .mobile-container
+    {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        font-family: 'Cinzel';
+        background-color: #1e2c33;
+        color: white;
+    }
+
+    .mobile-text
+    {
+        padding-bottom: 33px;
+    }
+
+    .top-mobile-img .bottom-mobile-img
+    {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+
+}
+
 .background
 {
     background-image: url("/images/Backdrop.jpg");
@@ -55,17 +275,6 @@ html
 {
     cursor: pointer;
     align-items: center;
-}
-
-.top-page-image
-{
-    padding: 700px;
-    background: url("/images/Trent.png");
-    background-repeat: no-repeat;
-    padding: 0;
-    margin: 0;
-    padding-bottom: 1300px;
-    background-size: 100% 100%;
 }
 
 .footer
