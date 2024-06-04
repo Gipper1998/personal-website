@@ -1,28 +1,29 @@
-// Constant values.
+// Constant values for html.
 let boardSize = 30;
 const playBoard = document.querySelector(".game-board");
 const scoreElement = document.querySelector(".game-score");
 const highScoreElement = document.querySelector(".high-score");
 const controls = document.querySelectorAll(".game-controls i");
 
-
+// Game variables.
 let foodX, foodY;
 let gameOver = false;
-
 let snakeX = 5, snakeY = 10;
 let snakeBody = [];
-
-let setIntervalID;
-
 let velocityX = 0, velocityY = 0;
-
 let gameScore = 0;
+
+// For mobile
+let touchStartX, touchStartY, touchEndX, touchEndY;
+
+// Interval.
+let setIntervalID;
 
 // Get high score from local storage.
 let highScore = localStorage.getItem("high-score") || 0;
 highScoreElement.innerText = `High Score: ${highScore}`;
 
-
+// Change the food position.
 const changeFoodPos = () =>
 {
     while(true)
@@ -39,18 +40,21 @@ const changeFoodPos = () =>
 
 }
 
+// When game ended.
 const handleGameOver = () =>
 {
     clearInterval(setIntervalID);
     document.getElementById("game-reset").style.visibility = "visible";
 }
 
+// Reset function.
 function reset()
 {
     document.getElementById("game-reset").style.visibility = "hidden";
     location.reload();
 }
 
+// Change direction.
 const changeDirection = (e) =>
 {
     // Change velocity on direction of key.
@@ -90,23 +94,87 @@ const changeDirection = (e) =>
             break;
         default:
             break;
-
-    }
-    try
-    {
-        e.preventDefault();
-
-    }
-    catch(e)
-    {
-
     }
 }
 
+/// Control buttons
 controls.forEach(key => 
 {
     key.addEventListener("click", () => changeDirection({ key: key.dataset.key }));
 });
+
+// Swipe detection.
+playBoard.addEventListener('touchstart', function(e) 
+{
+    const touch = e.touches[0];
+    touchStartX= touch.clientX;
+    touchStartY = touch.clientY;
+}, false);
+
+playBoard.addEventListener('touchend', function(e) 
+{
+    const touch = e.changedTouches[0];
+    touchEndX = touch.clientX;
+    touchEndY = touch.clientY;
+    handleSwipe();
+}, false);
+
+// Prevent scrolling in that area.
+playBoard.addEventListener('touchmove', function(e)
+{
+    e.preventDefault();
+}, false);
+
+function handleSwipe()
+{
+    const diffX = touchEndX - touchStartX;
+    const diffY = touchEndY - touchStartY;
+
+    if (Math.abs(diffX) > Math.abs(diffY))
+    {
+        // Horz swipe
+        if (diffX > 0)
+        {
+            simulateKeyPress('ArrowRight');
+        }
+        else
+        {
+            simulateKeyPress('ArrowLeft');
+        }
+    }
+    else
+    {
+        if (diffY > 0)
+        {
+            simulateKeyPress('ArrowDown');
+        }
+        else
+        {
+            simulateKeyPress('ArrowUp');
+        }
+    }
+}
+
+// Go from touch to simulating key press.
+function simulateKeyPress(key) 
+{
+    const event = new KeyboardEvent('keydown',
+    {
+        key: key,
+        code: key,
+        keyCode: key === 'ArrowUp' ? 38 :
+            key === 'ArrowDown' ? 40 :
+            key === 'ArrowLeft' ? 37 :
+            key === 'ArrowRight' ? 39 : 0,
+        which: key === 'ArrowUp' ? 38 :
+            key === 'ArrowDown' ? 40 :
+            key === 'ArrowLeft' ? 37 :
+            key === 'ArrowRight' ? 39 : 0,
+        bubbles: true
+    });
+
+    changeDirection(event)
+}
 
 const initGame = () =>
 {
