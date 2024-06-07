@@ -73,7 +73,7 @@
     transition: 0.2s ease;
 }
 
-#game-reset
+#reset
 {
     background-color: #04AA6D; /* Green */
     border: none;
@@ -91,7 +91,6 @@
     font-size: 16px;
     cursor: pointer;
     visibility: hidden;
-    transition: 0.2s ease;
 }
 
 #game-reset:hover

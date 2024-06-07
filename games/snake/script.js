@@ -1,9 +1,10 @@
-// Constant values for html.
+// Html elements.
 let boardSize = 30;
 const playBoard = document.querySelector(".game-board");
 const scoreElement = document.querySelector(".game-score");
 const highScoreElement = document.querySelector(".high-score");
 const controls = document.querySelectorAll(".game-controls i");
+const reset = document.getElementById("reset");
 
 // Game variables.
 let foodX, foodY;
@@ -23,40 +24,74 @@ let setIntervalID;
 let highScore = localStorage.getItem("high-score") || 0;
 highScoreElement.innerText = `High Score: ${highScore}`;
 
-// Change the food position.
-const changeFoodPos = () =>
+/**
+ * When window loads.
+ */
+window.onload = function()
 {
-    while(true)
-    {
-            // Random between 0 - 30.
+    randomQuote();
+    
+    // Set to interval at 100ms.
+    setIntervalID = setInterval(initGame, 100);
 
-        foodX = Math.floor(Math.random() * boardSize) + 1;
-        foodY = Math.floor(Math.random() * boardSize) + 1;
-        if (!snakeBody.includes(foodX, foodY))
-        {
-            break;
-        }
-    }
+    // Set food for beginning
+    changeFoodPos();
 
 }
 
-// When game ended.
-const handleGameOver = () =>
+/**
+ * When reset button is pressed, reload page.
+ */
+reset.addEventListener("click", function() 
 {
-    clearInterval(setIntervalID);
-    document.getElementById("game-reset").style.visibility = "visible";
-}
-
-// Reset function.
-function reset()
-{
-    document.getElementById("game-reset").style.visibility = "hidden";
+    reset.style.visibility = "hidden";
     location.reload();
-}
+});  
 
-// Change direction.
+/**
+ * Swipe direction begin.
+ */
+playBoard.addEventListener('touchstart', function(e) 
+{
+    const touch = e.touches[0];
+    touchStartX= touch.clientX;
+    touchStartY = touch.clientY;
+}, false);
+
+/**
+ * Swipde direction end.
+ */
+playBoard.addEventListener('touchend', function(e) 
+{
+    const touch = e.changedTouches[0];
+    touchEndX = touch.clientX;
+    touchEndY = touch.clientY;
+    handleSwipe();
+}, false);
+
+/**
+ * Prevent scrolling
+ */
+playBoard.addEventListener('touchmove', function(e)
+{
+    e.preventDefault();
+}, false);
+
+/**
+ * Control for key press.
+ */
+controls.forEach(key => {
+    key.addEventListener("click", () => changeDirection({ key: key.dataset.key }));
+});
+
+/**
+ * Change direction either with arrow keys, or mouse movements.
+ * @param {*} e 
+ */
 const changeDirection = (e) =>
 {
+    e.preventDefault();
+
     // Change velocity on direction of key.
     switch(e.key)
     {
@@ -92,47 +127,88 @@ const changeDirection = (e) =>
             velocityX = 1;
             velocityY = 0;
             break;
+        case "w":
+            if (velocityY == 1)
+            {
+                break;
+            }
+            velocityX = 0;
+            velocityY = -1;
+            break;
+        case "s":
+            if (velocityY == -1)
+            {
+                break;
+            }
+            velocityX = 0;
+            velocityY = 1;
+            break;
+        case "a":
+            if (velocityX == 1)
+            {
+                break;
+            }
+            velocityX = -1;
+            velocityY = 0;
+            break;
+        case "d":
+            if (velocityX == -1)
+            {
+                break;
+            }
+            velocityX = 1;
+            velocityY = 0;
+            break;
         default:
             break;
     }
 }
 
-/// Control buttons
-controls.forEach(key => 
-{
-    key.addEventListener("click", () => changeDirection({ key: key.dataset.key }));
-});
+/**
+ * Event listener for key press.
+ */
+document.addEventListener("keydown", changeDirection);
 
-// Swipe detection.
-playBoard.addEventListener('touchstart', function(e) 
+/**
+ * Change the food position when the snake ate it.
+ */
+const changeFoodPos = () =>
 {
-    const touch = e.touches[0];
-    touchStartX= touch.clientX;
-    touchStartY = touch.clientY;
-}, false);
+    while(true)
+    {
+            // Random between 0 - 30.
 
-playBoard.addEventListener('touchend', function(e) 
+        foodX = Math.floor(Math.random() * boardSize) + 1;
+        foodY = Math.floor(Math.random() * boardSize) + 1;
+        if (!snakeBody.includes(foodX, foodY))
+        {
+            break;
+        }
+    }
+
+}
+
+/**
+ * When game is over.
+ */
+const handleGameOver = () =>
 {
-    const touch = e.changedTouches[0];
-    touchEndX = touch.clientX;
-    touchEndY = touch.clientY;
-    handleSwipe();
-}, false);
+    clearInterval(setIntervalID);
+    reset.style.visibility = "visible";
+}
 
-// Prevent scrolling in that area.
-playBoard.addEventListener('touchmove', function(e)
-{
-    e.preventDefault();
-}, false);
-
+/**
+ * Calculation for swipe.
+ */
 function handleSwipe()
 {
+    // Difference measurement.
     const diffX = touchEndX - touchStartX;
     const diffY = touchEndY - touchStartY;
 
+    // Check which is higher and go in that direction.
     if (Math.abs(diffX) > Math.abs(diffY))
     {
-        // Horz swipe
         if (diffX > 0)
         {
             simulateKeyPress('ArrowRight');
@@ -155,7 +231,10 @@ function handleSwipe()
     }
 }
 
-// Go from touch to simulating key press.
+/**
+ * Simulate key press.
+ * @param {*} key 
+ */
 function simulateKeyPress(key) 
 {
     const event = new KeyboardEvent('keydown',
@@ -176,6 +255,10 @@ function simulateKeyPress(key)
     changeDirection(event)
 }
 
+/**
+ * Run the game as it needs to track asrychniously.
+ * @returns 
+ */
 const initGame = () =>
 {
     if (gameOver)
@@ -239,13 +322,22 @@ const initGame = () =>
     playBoard.innerHTML = htmlMarkup;
 }
 
-changeFoodPos();
 
-// Set to interval at 125ms.
-setIntervalID = setInterval(initGame, 100)
 
-document.addEventListener("keydown", changeDirection);
+/**
+ * Random integer function.
+ * @param {*} min 
+ * @param {*} max 
+ * @returns 
+ */
+function getRndInteger(min, max) 
+{
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
 
+/**
+ * Quotes used for website.
+ */
 const quotes = [
     "\"If you're going through hell, keep going.\" - Winston Churchill",
     "\"Don't be afraid to fail. Don't waste energy trying to cover up failure. Learn from your failures and go on to the next challenge.\” — H. Stanley Judd",
@@ -254,11 +346,9 @@ const quotes = [
     "\"Whatever you decide to do, make sure it makes you happy.\" — Paulo Coelho"  
 ];
 
-function getRndInteger(min, max) 
-{
-    return Math.floor(Math.random() * (max - min + 1) ) + min;
-}
-
+/**
+ * Get a random quote to paste in footers.
+ */
 function randomQuote()
 {
     let total = quotes.length;
@@ -266,7 +356,3 @@ function randomQuote()
     document.getElementById("quote").innerHTML = quotes[quote - 1];
 }
 
-window.onload = function()
-{
-    randomQuote();
-}

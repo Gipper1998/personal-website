@@ -1,24 +1,4 @@
-const quotes = [
-    "\"If you're going through hell, keep going.\" - Winston Churchill",
-    "\"Don't be afraid to fail. Don't waste energy trying to cover up failure. Learn from your failures and go on to the next challenge.\” — H. Stanley Judd",
-    "\"I continue to strive for excellence everyday, because I continue to push through any challenge that comes my way.\" - Trent Halama",
-    "\"Only those who dare to fail greatly can ever achieve greatly.\" — Robert F. Kennedy",
-    "\"Whatever you decide to do, make sure it makes you happy.\" — Paulo Coelho"  
-];
-
-function randomQuote()
-{
-    let total = quotes.length;
-    let quote = getRndInteger(1, total);
-    document.getElementById("quote").innerHTML = quotes[quote - 1];
-}
-
-function getRndInteger(min, max) 
-{
-    return Math.floor(Math.random() * (max - min + 1) ) + min;
-}
-
-let gameBoard = ["", "", "", "", "", "", "", "", ""];
+// All win positions.
 let winPositions = 
 [
     // rows
@@ -29,19 +9,37 @@ let winPositions =
     [0, 4, 8], [2, 4, 6]
 ];
 
+// Values needed.
 let pieces = ["X", "O"];
 let playerTurn;
 let gameEnd = false;
+let counter = 1;
 
+// Html element.
+const reset = document.getElementById("reset");
+
+/**
+ * When window loads.
+ */
 window.onload = function()
 {
     randomQuote();
     playerTurn = pieces[getRndInteger(0, 1)];
-    update();
 }
 
-function update()
+/**
+ * When reset button is pressed, reload page.
+ */
+reset.addEventListener("click", function() 
 {
+    reset.style.visibility = "hidden";
+    location.reload();
+});    
+
+/**
+ * Detect tile press using content loaded.
+ */
+document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < 9; i++) 
     {
         const doc = document.getElementById(i.toString());
@@ -49,14 +47,14 @@ function update()
         {
             if (this.innerHTML === "" && !gameEnd)
             {
-                // Find the place where clicked and place with class
+                // Find the place where clicked and place with class.
                 this.innerHTML = playerTurn;
                 this.classList.add(playerTurn.toLowerCase());
                 
-                // Check for win
+                // Check for win.
                 checkWin();
 
-                // If game ends, don't switch
+                // If game ends, don't switch.
                 if (!gameEnd)
                 {
                     if (playerTurn == "X")
@@ -75,17 +73,12 @@ function update()
             }
         });
     }
+});
 
-    // Reset button
-    const reset = document.getElementById("reset");
-    reset.addEventListener("click", function() 
-    {
-        document.getElementById("reset").style.visibility = "hidden";
-        location.reload();
-    });    
-}
-
-
+/**
+ * Check win function and see if there is a tie.
+ * @returns 
+ */
 function checkWin()
 {
     for (let i = 0; i < winPositions.length; i++)
@@ -102,10 +95,47 @@ function checkWin()
             document.getElementById(winPositions[i][1].toString()).classList.add("shimmer");
             document.getElementById(winPositions[i][2].toString()).classList.add("shimmer"); 
             gameEnd = true;
-            document.getElementById("reset").style.visibility = "visible";
+            reset.style.visibility = "visible";
+            return;
         }
+    }
+
+    // Tie checker.
+    counter++;
+    if (counter === 9)
+    {
+        reset.style.visibility = "visible";
     }
 }
 
+/**
+ * Random integer function.
+ * @param {*} min 
+ * @param {*} max 
+ * @returns 
+ */
+function getRndInteger(min, max) 
+{
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
 
+/**
+ * Quotes used for website.
+ */
+const quotes = [
+    "\"If you're going through hell, keep going.\" - Winston Churchill",
+    "\"Don't be afraid to fail. Don't waste energy trying to cover up failure. Learn from your failures and go on to the next challenge.\” — H. Stanley Judd",
+    "\"I continue to strive for excellence everyday, because I continue to push through any challenge that comes my way.\" - Trent Halama",
+    "\"Only those who dare to fail greatly can ever achieve greatly.\" — Robert F. Kennedy",
+    "\"Whatever you decide to do, make sure it makes you happy.\" — Paulo Coelho"  
+];
 
+/**
+ * Get a random quote to paste in footers.
+ */
+function randomQuote()
+{
+    let total = quotes.length;
+    let quote = getRndInteger(1, total);
+    document.getElementById("quote").innerHTML = quotes[quote - 1];
+}

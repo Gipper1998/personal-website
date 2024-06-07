@@ -1,48 +1,41 @@
-const quotes = [
-    "\"If you're going through hell, keep going.\" - Winston Churchill",
-    "\"Don't be afraid to fail. Don't waste energy trying to cover up failure. Learn from your failures and go on to the next challenge.\” — H. Stanley Judd",
-    "\"I continue to strive for excellence everyday, because I continue to push through any challenge that comes my way.\" - Trent Halama",
-    "\"Only those who dare to fail greatly can ever achieve greatly.\" — Robert F. Kennedy",
-    "\"Whatever you decide to do, make sure it makes you happy.\" — Paulo Coelho"  
-];
-
-function getRndInteger(min, max) 
-{
-    return Math.floor(Math.random() * (max - min + 1) ) + min;
-}
-
-function randomQuote()
-{
-    let total = quotes.length;
-    let quote = getRndInteger(1, total);
-    document.getElementById("quote").innerHTML = quotes[quote - 1];
-}
-
+// Grab all the cards needed.
 const cards = document.querySelectorAll(".card");
 
+// Getting the cards and match counter.
 let matched = 0, totalMatches = 8;
 let cardOne, cardTwo;
-let disableDeck = false;
-let firstFlip = false;
-let gameStart = false;
-let count = 0;
-let second = 0;
 
+// Boolean values.
+let disableDeck = false, firstFlip = false, gameStart = false;
+
+const reset = document.getElementById("reset");
+
+/**
+ * When window loads.
+ */
 window.onload = function()
 {
     randomQuote();
     shuffleCards();
-    document.getElementById("reset").addEventListener("click", reset);
 }
 
-function reset()
+/**
+ * When reset button is pressed, reload page.
+ */
+reset.addEventListener("click", function() 
 {
-    document.getElementById("reset").style.visibility = "hidden";
-    location.reload();
-}
+    reset.style.visibility = "hidden";
+    shuffleCards();
+});
 
+/**
+ * Flip card over.
+ * @param {*} param0 
+ * @returns 
+ */
 function flipCard({target: clickedCard}) 
 {
+    // Detect if this is the first flip for future opportunities to expand.
     if (!firstFlip)
     {
         firstFlip = true;
@@ -51,6 +44,7 @@ function flipCard({target: clickedCard})
     // Double check card flip
     if(cardOne != clickedCard && !disableDeck) 
     {
+        // Add to class.
         clickedCard.classList.add("flip");
 
         // If card one is empty, set card one to clicked and return.
@@ -61,13 +55,20 @@ function flipCard({target: clickedCard})
         cardTwo = clickedCard;
         disableDeck = true;
 
-        // Get the class configured and send to match function, disable the deck so that nothing else happens.
+        // Get the class configured and send to match function, 
+        // disable the deck so that nothing else happens.
         let cardOneImg = cardOne.querySelector(".back-view img").src;
         let cardTwoImg = cardTwo.querySelector(".back-view img").src;
         matchCards(cardOneImg, cardTwoImg);
     }
 }
 
+/**
+ * Check if the cards match.
+ * @param {*} img1 
+ * @param {*} img2 
+ * @returns 
+ */
 function matchCards(img1, img2) 
 {
     // If they match, add point.
@@ -76,6 +77,7 @@ function matchCards(img1, img2)
         // If it's right, flip once over
         let tempOne = cardOne;
         let tempTwo = cardTwo;
+
         setTimeout(() => {
             tempOne.classList.remove("flip");
             tempTwo.classList.remove("flip");
@@ -86,14 +88,16 @@ function matchCards(img1, img2)
             tempTwo.classList.add("flip");
         }, 500);
 
+        // Add to match and check if it equals total matches.
         matched++;
         if (matched == totalMatches)
         {
             gameStart = false;
-            document.getElementById("reset").style.visibility = "visible";
+            reset.style.visibility = "visible";
         }
 
-        // Once the events are removed, the deck can be reopened and the two cards will be reset.
+        // Once the events are removed, the deck can be 
+        // reopened and the two cards will be reset.
         cardOne.removeEventListener("click", flipCard);
         cardTwo.removeEventListener("click", flipCard);
         cardOne = cardTwo = "";
@@ -114,12 +118,16 @@ function matchCards(img1, img2)
     }, 1000);
 }
 
-// Acts like a reset function, will shuffle the cards and place them throughout the board.
+/**
+ * Reset function.
+ */
 function shuffleCards() 
 { 
+    reset.style.visibility = 'hidden';
     cards.forEach(card => {
         card.addEventListener("click", flipCard);
     });
+    
     //Resets values
     matched = 0;
     disableDeck = false, gameStart = false;
@@ -140,3 +148,34 @@ function shuffleCards()
     });
 }
 
+/**
+ * Random integer function.
+ * @param {*} min 
+ * @param {*} max 
+ * @returns 
+ */
+function getRndInteger(min, max) 
+{
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+/**
+ * Quotes used for website.
+ */
+const quotes = [
+    "\"If you're going through hell, keep going.\" - Winston Churchill",
+    "\"Don't be afraid to fail. Don't waste energy trying to cover up failure. Learn from your failures and go on to the next challenge.\” — H. Stanley Judd",
+    "\"I continue to strive for excellence everyday, because I continue to push through any challenge that comes my way.\" - Trent Halama",
+    "\"Only those who dare to fail greatly can ever achieve greatly.\" — Robert F. Kennedy",
+    "\"Whatever you decide to do, make sure it makes you happy.\" — Paulo Coelho"  
+];
+
+/**
+ * Get a random quote to paste in footers.
+ */
+function randomQuote()
+{
+    let total = quotes.length;
+    let quote = getRndInteger(1, total);
+    document.getElementById("quote").innerHTML = quotes[quote - 1];
+}

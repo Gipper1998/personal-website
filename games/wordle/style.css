@@ -1,0 +1,248 @@
+.game-container
+{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bg
+{
+    background-image: url("/images/pixel-dark.jpg");
+    background-size: 100% 100%;
+}
+
+#game
+{
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#board-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+#board
+{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#message
+{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    margin-top: 15px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 12px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0);
+    color: black;
+    font-size: 15px;
+    font-weight: bolder;
+    opacity: 0;
+}
+
+#reset
+{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3px;
+    background-color: rgba(20, 30, 57, 0.9);
+    padding: 8px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0);
+    color: white;
+    font-size: 15px;
+    font-weight: bolder;
+    transition: opacity 1s;
+    opacity: 0;
+    visibility: hidden;
+
+}
+
+#reset:hover
+{
+    background-color: rgba(20, 30, 57, 0.5);
+    cursor: pointer;
+}
+
+.not-enough-letters
+{
+    border-radius: 5px;
+}
+
+.square 
+{
+    border: 3px solid rgba(58, 58, 60, 0.9);
+    min-width: 60px;
+    min-height: 60px;
+    font-size: 45px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes shake 
+{
+    0% { transform: translateX(0); }
+    10% { transform: translateX(-1px); }
+    20% { transform: translateX(1px); }
+    30% { transform: translateX(-1px); }
+    40% { transform: translateX(2px); }
+    50% { transform: translateX(-2px); }
+    60% { transform: translateX(2px); }
+    70% { transform: translateX(-1px); }
+    80% { transform: translateX(1px); }
+    90% { transform: translateX(-1px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes wave 
+{
+    0% { transform: translateY(0px); }
+    20% { transform: translateY(-20px); }
+    40% { transform: translateY(7px); }
+    60% { transform: translateY(-5px); }
+    80% { transform: translateY(5px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes textFilled
+{
+    0%
+    {
+        transform: scaleY(1);
+    } 
+    50%
+    {
+        transform: scale(1.15);
+    }
+    100%
+    {
+        transform: scaleY(1);
+    }  
+}
+
+@keyframes shrinkExpandGreen 
+{
+    0% 
+    {
+        transform: scaleY(1); 
+
+    }
+    50% 
+    {
+        transform: scaleY(0); 
+
+    }
+    100% 
+    {
+        transform: scaleY(1); 
+        background-color: rgba(83, 141, 78, 0.9);
+        border-color: rgba(0, 0, 0, 0);
+    }
+}
+
+@keyframes shrinkExpandYellow 
+{
+    0% 
+    {
+        transform: scaleY(1); 
+    }
+    50% 
+    {
+        transform: scaleY(0); 
+    }
+    100% 
+    {
+        transform: scaleY(1); 
+        background-color: rgba(181, 159, 59, 0.9);
+        border-color: rgba(0, 0, 0, 0);
+    }
+}
+
+@keyframes shrinkExpandGray {
+    0% 
+    {
+        transform: scaleY(1);
+    }
+    50% 
+    {
+        transform: scaleY(0); 
+    }
+    100% 
+    {
+        transform: scaleY(1);
+        background-color: rgba(58, 58, 60, 0.9);
+        border-color: rgba(0, 0, 0, 0);
+    }
+}
+
+#keyboard-container 
+{
+    height: 200px;
+}
+
+.keyboard-row 
+{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 3px 8px;
+    touch-action: manipulation;
+}
+
+.keyboard-row button 
+{
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 20px;
+    border: 0;
+    padding: 0;
+    height: 58px;
+    cursor: pointer;
+    background-color: rgba(129, 131, 132, 0.9);
+    color: rgb(215, 218, 220);
+    flex-grow: 1;
+    text-transform: uppercase;
+    margin-right: 6px;
+    border-radius: 4px;
+    user-select: none;
+    transition: 0.3s;
+}
+
+.keyboard-row button:hover
+{
+    opacity: 0.85;
+
+}
+
+.keyboard-row button .wide-button 
+{
+    flex-grow: 1.5;
+}
+
+.spacer-half 
+{
+    flex-grow: 0.5;
+}
