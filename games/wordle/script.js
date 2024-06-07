@@ -396,6 +396,12 @@ function createSquares()
 function handleDeleteLetter() 
 {
     const currentWordArr = getCurrentWordArr();
+
+    if (currentWordArr.length === 0)
+    {
+        return;
+    }
+
     currentWordArr.pop();
 
     guessedWords[guessedWords.length - 1] = currentWordArr;
