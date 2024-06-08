@@ -148,7 +148,13 @@ function updateGuessedWords(letter)
     }, 100);
 }
 
-// Replace the color for the keys.
+/**
+ * Replace color key.
+ * @param {*} key 
+ * @param {*} color 
+ * @param {*} interval 
+ * @returns 
+ */
 function replaceKeyColor(key, color, interval)
 {
     for (let i = 0; i < keys.length; i++)
@@ -158,6 +164,12 @@ function replaceKeyColor(key, color, interval)
         // If matched, set delay and add.
         if (letter.toUpperCase() === key)
         {
+            const currentBackground = keys[i].style.background;
+            if (currentBackground === "rgba(83, 141, 78, 0.9)")
+            {
+                continue;
+            }
+
             setTimeout(() => {
                 if (color === 'g')
                 {
@@ -178,7 +190,10 @@ function replaceKeyColor(key, color, interval)
     return false;
 }
 
-// If an error were to occur, send with animation.
+/**
+ * If the user inputs something wrong, it will send an error.
+ * @param {*} msg 
+ */
 function sendErrorMessage(msg)
 {
     message.innerHTML = msg;
@@ -192,7 +207,9 @@ function sendErrorMessage(msg)
     }, 1000);
 }
 
-// The final game, sends message depending on if they get the word.
+/**
+ * Ending the game, it will either show they got it, or wrong.
+ */
 function sendFinalMessage()
 {
     if (gotWord === true)
@@ -426,6 +443,7 @@ function getNewWord()
     let random = getRndInteger(0, totalWords.length);
     word = totalWords[random];
     word = word.toUpperCase();
+    console.log(word);
 }
 
 /**
