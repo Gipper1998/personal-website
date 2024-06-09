@@ -443,7 +443,6 @@ function getNewWord()
     let random = getRndInteger(0, totalWords.length);
     word = totalWords[random];
     word = word.toUpperCase();
-    console.log(word);
 }
 
 /**
