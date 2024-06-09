@@ -85,12 +85,20 @@ controls.forEach(key => {
 });
 
 /**
+ * 
+ */
+function preventDefaultKey(e)
+{
+    e.preventDefault();
+    changeDirection(e);
+}
+
+/**
  * Change direction either with arrow keys, or mouse movements.
  * @param {*} e 
  */
 const changeDirection = (e) =>
 {
-    e.preventDefault();
 
     // Change velocity on direction of key.
     switch(e.key)
@@ -167,7 +175,7 @@ const changeDirection = (e) =>
 /**
  * Event listener for key press.
  */
-document.addEventListener("keydown", changeDirection);
+document.addEventListener("keydown", preventDefaultKey);
 
 /**
  * Change the food position when the snake ate it.
